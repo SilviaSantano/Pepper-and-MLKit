@@ -1,0 +1,2116 @@
+topic: ~softbank_lexicon()
+
+#==================================================================#
+##### Robot concepts #####
+concept:(ald_robots) [alan bella Nao Pepper Peppersan Romeo]
+#==================================================================#
+
+#==================================================================#
+##### Voice tweaking #####
+concept:(neutral) \style=neutral\ \rspd=100\ \vct=110\
+concept:(neutral_slow) \style=neutral\ \vct=105\ \rspd=100\
+concept:(joyful) \style=joyful\ \rspd=90\ \vct=95\
+concept:(didactic) \style=didactic\ \rspd=105\ \vct=110\
+#==================================================================#
+
+#==================================================================#
+##### Verbs #####
+#------------------------------------------------------------------#
+concept:(want_to) ["[want wish "would [like love]"] to" wanna "need {to}"]
+#==================================================================#
+
+#==================================================================#
+##### Auxiliaries #####
+#------------------------------------------------------------------#
+concept:(dont) [don't "do not"]
+concept:(didnt) [didn't "did not"]
+concept:(havent) [haven't "have not"]
+concept:(doesnt) [doesn't "does not"]
+concept:(isnt) [isn't "is not"]
+concept:(arent) [aren't "are not"]
+concept:(cant) [can't cannot "can not"]
+concept:(couldnt) [couldn't "could not"]
+#==================================================================#
+
+#==================================================================#
+##### 1rst person verbs #####
+#------------------------------------------------------------------#
+concept:(i_am) [I'm "I am"]
+concept:(i_have) ["I've {got gotten}" "I have {got gotten}"]
+concept:(i_will) [I'll "I will" "[I'm "I am"] "going to" gonna"]
+concept:(i_would) [I'd "I would"]
+concept:(i_am_not) ["I'm not" "I am not" "I ain't"]
+concept:(i_have_not) ["I haven't {got gotten}" "I don't have {got gotten}" "I do not have {got gotten}" "I have not {got gotten}"]
+concept:(i_dont_have) ["I don't have" "I do not have"]
+concept:(i_do_not) ["I do not" "I don't"]
+concept:(i_did_not) ["I did not" "I didn't"]
+concept:(i_will_not) ["I will not" "I won't"]
+concept:(i_would_not) ["I would not" "I'd not" "I wouldn't"]
+concept:(i_have_to) ["I have to" "I've got to"]
+concept:(i_want) ["I [want wish]" "[I'll I'd] [like love]"]
+concept:(i_dont_want) ["~i_do_not [want wish]" "[~i_would_not ~i_will_not] [like love]"]
+concept:(i_want_to) ["I ["want to" wanna]" "[I'll I'd] [like love] to" "I wish [to "I can"]" "I'm looking {forward} to" "I {really} ~want_to"]
+concept:(i_dont_want_to) ["I [don't "do not"] want to"]
+concept:(we_are) [we're "we are"]
+concept:(we_are_not) ["we're not" "we [are were] not" "we aren't"]
+
+#------------------------------------------------------------------#
+##### 2nd person verbs #####
+#------------------------------------------------------------------#
+concept:(you_are) [you're "you are"]
+concept:(you_were) ["you were"]
+concept:(you_have) ["you've {got gotten}" "you have {got gotten}"]
+concept:(you_will) [you'll "you will"]
+concept:(you_are_not) ["you're not" "you are not" "you aren't"]
+concept:(you_have_not) ["you haven't {got gotten}" "you don't have {got gotten}" "you do not have {got gotten}" "you have not {got gotten}"]
+concept:(you_do_not) ["you do not" "you don't"]
+concept:(you_did_not) ["you did not" "you didn't"]
+concept:(you_will_not) ["you will not" "you won't"]
+concept:(do_you_need) ["do you [want wish wanna need]" "would you [like love]"]
+
+#------------------------------------------------------------------#
+##### 3rd person verbs #####
+#------------------------------------------------------------------#
+concept:(it) [it "[this that] {thing stuff}"] #add any synonym of "stuff" in the list
+concept:(it_is) [it's that's "[it that this] [is was]" "{"I think" well "in my opinion"} [it's "it is"]"
+"it's without doubt"]
+concept:(it_is_not) ["[it's that's] not" "[it that this] [isn't wasn't]" "[it that this] [is was] not"]
+#==================================================================#
+
+#==================================================================#
+##### Other verbs #####
+#------------------------------------------------------------------#
+concept:(vb_imp_talk) "~dont talk {"to me"} {about}"
+concept:(vb_imp_chat) "~dont chat with me {about}"
+concept:(vb_imp_say) "~dont say anything {"about it"}"
+concept:(vb_imp_discuss) "~dont discuss it"
+concept:(vb_imp_gossip) "~dont gossip {"about it"}"
+concept:(verbs_inf_talk) "to [talk discuss gossip chat say]"
+concept:(verbs_imp_talk) [~vb_imp_talk ~vb_imp_chat ~vb_imp_say ~vb_imp_discuss ~vb_imp_gossip]
+concept:(tell_me) ["tell me"]
+#==================================================================#
+
+
+concept:(robot_impossible_actions)
+[
+drink
+eat
+swim
+fly
+"go to the toilet"
+"take a dump"
+"do number 2"
+pee
+"do number 1"
+breathe
+cry
+]
+
+concept:(gift_verb_inf)
+[
+"give"
+"offer"
+]
+
+concept:(gift_verb_inf_to)
+[
+"to give"
+"to offer"
+]
+
+concept:(gift_verb_pres_1s)
+[
+"I give"
+"I offer"
+]
+
+concept:(gift_verb_continuous)
+[
+"giving"
+"offering"
+]
+
+
+concept:(gift_verb_continuous_1s)
+[
+"[I'm "I am"] giving"
+"[I'm "I am"] offering"
+]
+
+concept:(gift_verb_pp)
+[
+"given"
+"offered"
+]
+
+concept:(gift_verb_futur_1s)
+[
+"[I'll "I will"] give"
+"[I'll "I will"] offer"
+]
+
+concept:(gift_verb_pt_1s)
+[
+"I gave"
+"["I have" "I've" "I had"] given"
+"I offered"
+"["I have" "I've" "I had"] offered"
+]
+
+
+#==================================================================#
+##### Death/Violence related verbs #####
+#------------------------------------------------------------------#
+concept:(death_verb_inf_to)
+[
+"to knock down $temp/entity=verb_inf_death"
+"to slaughter $temp/entity=verb_inf_death"
+"to slay $temp/entity=verb_inf_death"
+"to shoot {down} $temp/entity=verb_inf_death"
+"to destroy $temp/entity=verb_inf_death"
+"to eradicate $temp/entity=verb_inf_death"
+"to tear down $temp/entity=verb_inf_death"
+"to extinguish $temp/entity=verb_inf_death"
+"to wreck $temp/entity=verb_inf_death"
+"to murder $temp/entity=verb_inf_death"
+"to assassinate $temp/entity=verb_inf_death"
+"to screw up $temp/entity=verb_inf_death"
+"to bust $temp/entity=verb_inf_death"
+"to bungle $temp/entity=verb_inf_death"
+"to burn down $temp/entity=verb_inf_death"
+"to burn off $temp/entity=verb_inf_death"
+"to flame $temp/entity=verb_inf_death"
+"to [break shatter smash snap] {*} head"
+"to [break shatter smash snap] {*} neck"
+"to demolish $temp/entity=verb_inf_death"
+"to wipe the floor $temp/entity=verb_inf_death"
+"to crush $temp/entity=verb_inf_death"
+"to cut * throat  $temp/entity=verb_inf_death"
+"to slit * throat  $temp/entity=verb_inf_death"
+"to drive * mad $temp/entity=verb_inf_death"
+"to poison $temp/entity=verb_inf_death"
+"to strangle $temp/entity=verb_inf_death"
+"to throttle $temp/entity=verb_inf_death"
+"to choke $temp/entity=verb_inf_death"
+"to gut $temp/entity=verb_inf_death"
+"to exterminate $temp/entity=verb_inf_death"
+"to wipe {*} out $temp/entity=verb_inf_death"
+"to blow up $temp/entity=verb_inf_death"
+"to stone $temp/entity=verb_inf_death"
+"to lynch $temp/entity=verb_inf_death"
+"to massacre $temp/entity=verb_inf_death"
+"to hang $temp/entity=verb_inf_death"
+"to drown $temp/entity=verb_inf_death"
+"to stab $temp/entity=verb_inf_death"
+"to shank $temp/entity=verb_inf_death"
+"to butcher $temp/entity=verb_inf_death"
+#"trucider $temp/entity=verb_inf_death"
+"to kill $temp/entity=verb_inf_death"
+]
+
+concept:(death_verb_inf)
+[
+"knock down $temp/entity=verb_inf_death"
+"slaughter $temp/entity=verb_inf_death"
+"slay $temp/entity=verb_inf_death"
+"shoot {down} $temp/entity=verb_inf_death"
+"destroy $temp/entity=verb_inf_death"
+"eradicate $temp/entity=verb_inf_death"
+"tear down $temp/entity=verb_inf_death"
+"extinguish $temp/entity=verb_inf_death"
+"wreck $temp/entity=verb_inf_death"
+"murder $temp/entity=verb_inf_death"
+"assassinate $temp/entity=verb_inf_death"
+"screw up $temp/entity=verb_inf_death"
+"bust $temp/entity=verb_inf_death"
+"bungle $temp/entity=verb_inf_death"
+"burn down $temp/entity=verb_inf_death"
+"burn off $temp/entity=verb_inf_death"
+"flame $temp/entity=verb_inf_death"
+"[break shatter smash snap] {*} head"
+"[break shatter smash snap] {*} neck"
+"demolish $temp/entity=verb_inf_death"
+"wipe the floor $temp/entity=verb_inf_death"
+"crush $temp/entity=verb_inf_death"
+"cut * throat  $temp/entity=verb_inf_death"
+"slit * throat  $temp/entity=verb_inf_death"
+"drive * mad $temp/entity=verb_inf_death"
+"poison $temp/entity=verb_inf_death"
+"strangle $temp/entity=verb_inf_death"
+"throttle $temp/entity=verb_inf_death"
+"choke $temp/entity=verb_inf_death"
+"gut $temp/entity=verb_inf_death"
+"exterminate $temp/entity=verb_inf_death"
+"wipe {*} out $temp/entity=verb_inf_death"
+"blow up $temp/entity=verb_inf_death"
+"stone $temp/entity=verb_inf_death"
+"lynch $temp/entity=verb_inf_death"
+"massacre $temp/entity=verb_inf_death"
+"hang $temp/entity=verb_inf_death"
+"drown $temp/entity=verb_inf_death"
+"stab $temp/entity=verb_inf_death"
+"shank $temp/entity=verb_inf_death"
+"butcher $temp/entity=verb_inf_death"
+#"trucider $temp/entity=verb_inf_death"
+"kill $temp/entity=verb_inf_death"
+]
+
+concept:(death_verb_imper_2p_ppc3)
+[
+"knock [them him her] down"
+"slaughter [them him her]"
+"slay [them him her]"
+"shoot [them him her] {down}"
+"destroy [them him her]"
+"eradicate [them him her]"
+"tear [them him her] down"
+"extinguish [them him her]"
+"wreck [them him her]"
+"murder [them him her]"
+"assassinate [them him her]"
+"screw [them him her] up"
+"bust [them him her]"
+"bungle [them him her]"
+"burn [them him her] down"
+"burn [them him her] off"
+"flame [them him her]"
+"demolish [them him her]"
+"crush [them him her]"
+"poison [them him her]"
+"strangle [them him her]"
+"throttle [them him her]"
+"choke [them him her]"
+"gut [them him her]"
+"exterminate [them him her]"
+"blow [them him her] up"
+"stone [them him her]"
+"lynch [them him her]"
+"massacre [them him her]"
+"hang [them him her]"
+"drown [them him her]"
+"stab [them him her]"
+"shank [them him her]"
+"butcher [them him her]"
+#"trucider"
+"kill [them him her]"
+]
+
+concept:(death_verb_imper_2p_ppc1)
+[
+"knock me down"
+"slaughter me"
+"slay me"
+"shoot me {down}"
+"destroy me"
+"eradicate me"
+"tear me down"
+"extinguish me"
+"wreck me"
+"murder me"
+"assassinate me"
+"screw me up"
+"bust me"
+"bungle me"
+"burn me down"
+"burn me off"
+"flame me"
+"demolish me"
+"crush me"
+"poison me"
+"strangle me"
+"throttle me"
+"choke me"
+"gut me"
+"exterminate me"
+"blow me up"
+"stone me"
+"lynch me"
+"massacre me"
+"hang me"
+"drown me"
+"stab me"
+"shank me"
+"butcher me"
+#"trucider"
+"kill me"
+]
+
+concept:(death_verb_continuous)
+[
+"knocking down"
+"slaughtering"
+"slaying"
+"shooting {down}"
+"destroying"
+"eradicating"
+"tearing down"
+"extinguishing"
+"wrecking"
+"murdering"
+"assassinating"
+"screwing up"
+"busting"
+"bungling"
+"burning down"
+"burning off"
+"flaming"
+"[breaking shattering smashing snaping] * head"
+"[breaking shattering smashing snaping] * neck"
+"demolishing"
+"wiping the floor"
+"crushing"
+"cutting * throat "
+"slitting * throat "
+"driving * mad"
+"poisoning"
+"strangling"
+"throttling"
+"choking"
+"gutting"
+"exterminating"
+"wiping {*} out"
+"blowing up"
+"stoning"
+"lynching"
+"massacring"
+"hanging"
+"drowning"
+"stabing"
+"shanking"
+"butchering"
+#"trucider"
+"killing"
+]
+
+
+concept:(death_verb_pp)
+[
+"knocked down"
+"slaughtered"
+"slain"
+"shooted {down}"
+"destroyed"
+"eradicated"
+"torn down"
+"extinguished"
+"wrecked"
+"murdered"
+"assassinated"
+"screwed up"
+"busted"
+"bungled"
+"burned down"
+"burnt down"
+"burned off"
+"burnt off"
+"flamed"
+"[broke broken shattered smashed snaped] {*} head"
+"[broke broken shattered smashed snaped] {*} neck"
+"demolished"
+"wiped the floor"
+"crushed"
+"cut * throat"
+"slit * throat"
+"slitted * throat"
+"drove * mad"
+"driven * mad"
+"poisoned"
+"strangled"
+"throttled"
+"choked"
+"gutted"
+"exterminated"
+"wiped {*} out"
+"blew up"
+"blown up"
+"stoned"
+"lynched"
+"massacred"
+"hanged"
+"hung"
+"drowned"
+"stabbed"
+"shanked"
+"butchered"
+"killed"
+]
+
+concept:(death_verb_continuous_pp)
+[
+"knocking down"
+"slaughtering"
+"slaying"
+"shooting {down}"
+"destroying"
+"eradicating"
+"tearing down"
+"extinguishing"
+"wrecking"
+"murdering"
+"assassinating"
+"screwing up"
+"busting"
+"bungling"
+"burning down"
+"burning off"
+"flaming"
+"[breaking shattering smashing snaping] {*} head"
+"[breaking shattering smashing snaping] {*} neck"
+"demolishing"
+"wiping the floor"
+"crushing"
+"cutting * throat"
+"slitting * throat"
+"driving * mad"
+"poisoning"
+"strangling"
+"throttling"
+"choking"
+"gutting"
+"exterminating"
+"wiping {*} out"
+"blowing up"
+"stoning"
+"lynching"
+"massacring"
+"drowning"
+"stabbing"
+"shanking"
+"butchering"
+"killing"
+]
+
+
+concept:(death_verb_present_1s)
+[
+"I knock down"
+"I slaughter"
+"I slay"
+"I shoot {down}"
+"I destroy"
+"I eradicate"
+"I tear down"
+"I extinguish"
+"I wreck"
+"I murder"
+"I assassinate"
+"I screw up"
+"I bust"
+"I bungle"
+"I burn down"
+"I burn off"
+"I flame"
+"I [break shatter smash snap] {*} head"
+"I [break shatter smash snap] {*} neck"
+"I demolish"
+"I wipe the floor"
+"I crush"
+"I cut * throat"
+"I slit * throat"
+"I drive * mad"
+"I poison"
+"I strangle"
+"I throttle"
+"I choke"
+"I gut"
+"I exterminate"
+"I wipe {*} out"
+"I blow up"
+"I stone"
+"I lynch"
+"I massacre"
+"I hang"
+"I drown"
+"I stab"
+"I shank"
+"I butcher"
+#"trucider"
+"I kill"
+]
+
+concept:(death_verb_past_2s)
+[
+"you {have had} knocked down"
+"you {have had} slaughtered"
+"you slew"
+"you {have had} slain"
+"you {have had} shooted {down}"
+"you {have had} destroyed"
+"you {have had} eradicated"
+"you tore down"
+"you {have had} torn down"
+"you {have had} extinguished"
+"you {have had} wrecked"
+"you {have had} murdered"
+"you {have had} assassinated"
+"you {have had} screwed up"
+"you {have had} busted"
+"you {have had} bungled"
+"you {have had} burned down"
+"you {have had} burnt down"
+"you {have had} burned off"
+"you {have had} burnt off"
+"you {have had} flamed"
+"["you broke" "you [have had] broken" "you [have had] shattered" "you [have had] smashed" "you [have had] snaped"] {*} head"
+"["you broke" "you [have had] broken" "you [have had] shattered" "you [have had] smashed" "you [have had] snaped"] {*} neck"
+"you {have had} demolished"
+"you {have had} wiped the floor"
+"you {have had} crushed"
+"you {have had} cut * throat"
+"you {have had} [slit slitted] * throat"
+"you {have had} druven * mad"
+"you drove * mad"
+"you {have had} poisoned"
+"you {have had} strangled"
+"you {have had} throttled"
+"you {have had} choked"
+"you {have had} gutted"
+"you {have had} exterminated"
+"you {have had} wiped {*} out"
+"you blew up"
+"you [have had] blown up"
+"you {have had}  stoned"
+"you {have had} lynched"
+"you {have had} massacred"
+"you {have had} hanged"
+"you {have had} hung"
+"you {have had} drowned"
+"you {have had} stabbed"
+"you {have had} shanked"
+"you {have had} butchered"
+#"trucider"
+"you {have had} killed"
+]
+
+concept:(death_verb_futur_1s)
+[
+"["I will" "I'll"] knock down"
+"["I will" "I'll"] slaughter"
+"["I will" "I'll"] slay"
+"["I will" "I'll"] shoot {down}"
+"["I will" "I'll"] destroy"
+"["I will" "I'll"] eradicate"
+"["I will" "I'll"] tear down"
+"["I will" "I'll"] extinguish"
+"["I will" "I'll"] wreck"
+"["I will" "I'll"] murder"
+"["I will" "I'll"] assassinate"
+"["I will" "I'll"] screw up"
+"["I will" "I'll"] bust"
+"["I will" "I'll"] bungle"
+"["I will" "I'll"] burn down"
+"["I will" "I'll"] burn off"
+"["I will" "I'll"] flame"
+"["I will" "I'll"] [break shatter smash snap] {*} head"
+"["I will" "I'll"] [break shatter smash snap] {*} neck"
+"["I will" "I'll"] demolish"
+"["I will" "I'll"] wipe the floor"
+"["I will" "I'll"] crush"
+"["I will" "I'll"] cut * throat"
+"["I will" "I'll"] slit * throat"
+"["I will" "I'll"] drive * mad"
+"["I will" "I'll"] poison"
+"["I will" "I'll"] strangle"
+"["I will" "I'll"] throttle"
+"["I will" "I'll"] choke"
+"["I will" "I'll"] gut"
+"["I will" "I'll"] exterminate"
+"["I will" "I'll"] wipe {*} out"
+"["I will" "I'll"] blow up"
+"["I will" "I'll"] stone"
+"["I will" "I'll"] lynch"
+"["I will" "I'll"] massacre"
+"["I will" "I'll"] hang"
+"["I will" "I'll"] drown"
+"["I will" "I'll"] stab"
+"["I will" "I'll"] shank"
+"["I will" "I'll"] butcher"
+#"trucider"
+"["I will" "I'll"] kill"
+]
+
+concept:(death_verb_futur_3p)
+[
+"["they will" "they'll"] knock down"
+"["they will" "they'll"] slaughter"
+"["they will" "they'll"] slay"
+"["they will" "they'll"] shoot {down}"
+"["they will" "they'll"] destroy"
+"["they will" "they'll"] eradicate"
+"["they will" "they'll"] tear down"
+"["they will" "they'll"] extinguish"
+"["they will" "they'll"] wreck"
+"["they will" "they'll"] murder"
+"["they will" "they'll"] assassinate"
+"["they will" "they'll"] screw up"
+"["they will" "they'll"] bust"
+"["they will" "they'll"] bungle"
+"["they will" "they'll"] burn down"
+"["they will" "they'll"] burn off"
+"["they will" "they'll"] flame"
+"["they will" "they'll"] [break shatter smash snap] {*} head"
+"["they will" "they'll"] [break shatter smash snap] {*} neck"
+"["they will" "they'll"] demolish"
+"["they will" "they'll"] wipe the floor"
+"["they will" "they'll"] crush"
+"["they will" "they'll"] cut * throat"
+"["they will" "they'll"] slit * throat"
+"["they will" "they'll"] drive * mad"
+"["they will" "they'll"] poison"
+"["they will" "they'll"] strangle"
+"["they will" "they'll"] throttle"
+"["they will" "they'll"] choke"
+"["they will" "they'll"] gut"
+"["they will" "they'll"] exterminate"
+"["they will" "they'll"] wipe {*} out"
+"["they will" "they'll"] blow up"
+"["they will" "they'll"] stone"
+"["they will" "they'll"] lynch"
+"["they will" "they'll"] massacre"
+"["they will" "they'll"] hang"
+"["they will" "they'll"] drown"
+"["they will" "they'll"] stab"
+"["they will" "they'll"] shank"
+"["they will" "they'll"] butcher"
+#"trucider"
+"["they will" "they'll"] kill"
+]
+
+concept:(death_verb_futur_3s)
+[
+"["he will" "she will" "he'll" "she'll"] knock down"
+"["he will" "she will" "he'll" "she'll"] slaughter"
+"["he will" "she will" "he'll" "she'll"] slay"
+"["he will" "she will" "he'll" "she'll"] shoot {down}"
+"["he will" "she will" "he'll" "she'll"] destroy"
+"["he will" "she will" "he'll" "she'll"] eradicate"
+"["he will" "she will" "he'll" "she'll"] tear down"
+"["he will" "she will" "he'll" "she'll"] extinguish"
+"["he will" "she will" "he'll" "she'll"] wreck"
+"["he will" "she will" "he'll" "she'll"] murder"
+"["he will" "she will" "he'll" "she'll"] assassinate"
+"["he will" "she will" "he'll" "she'll"] screw up"
+"["he will" "she will" "he'll" "she'll"] bust"
+"["he will" "she will" "he'll" "she'll"] bungle"
+"["he will" "she will" "he'll" "she'll"] burn down"
+"["he will" "she will" "he'll" "she'll"] burn off"
+"["he will" "she will" "he'll" "she'll"] flame"
+"["he will" "she will" "he'll" "she'll"] [break shatter smash snap] {*} head"
+"["he will" "she will" "he'll" "she'll"] [break shatter smash snap] {*} neck"
+"["he will" "she will" "he'll" "she'll"] demolish"
+"["he will" "she will" "he'll" "she'll"] wipe the floor"
+"["he will" "she will" "he'll" "she'll"] crush"
+"["he will" "she will" "he'll" "she'll"] cut * throat"
+"["he will" "she will" "he'll" "she'll"] slit * throat"
+"["he will" "she will" "he'll" "she'll"] drive * mad"
+"["he will" "she will" "he'll" "she'll"] poison"
+"["he will" "she will" "he'll" "she'll"] strangle"
+"["he will" "she will" "he'll" "she'll"] throttle"
+"["he will" "she will" "he'll" "she'll"] choke"
+"["he will" "she will" "he'll" "she'll"] gut"
+"["he will" "she will" "he'll" "she'll"] exterminate"
+"["he will" "she will" "he'll" "she'll"] wipe {*} out"
+"["he will" "she will" "he'll" "she'll"] blow up"
+"["he will" "she will" "he'll" "she'll"] stone"
+"["he will" "she will" "he'll" "she'll"] lynch"
+"["he will" "she will" "he'll" "she'll"] massacre"
+"["he will" "she will" "he'll" "she'll"] hang"
+"["he will" "she will" "he'll" "she'll"] drown"
+"["he will" "she will" "he'll" "she'll"] stab"
+"["he will" "she will" "he'll" "she'll"] shank"
+"["he will" "she will" "he'll" "she'll"] butcher"
+#"trucider"
+"["he will" "she will" "he'll" "she'll"] kill"
+]
+
+concept:(death_verb_pt_1s)
+[
+"I knocked down"
+"["I had" "I have"] knocked down"
+"I slaughtered"
+"["I had" "I have"] slaughtered"
+"I slain"
+"["I had" "I have"] slain"
+"I shooted {down}"
+"["I had" "I have"] shooted {down}"
+"I destroyed"
+"["I had" "I have"] destroyed"
+"I eradicated"
+"["I had" "I have"] eradicated"
+"I torn down"
+"["I had" "I have"] torn down"
+"I extinguished"
+"["I had" "I have"] extinguished"
+"I wrecked"
+"["I had" "I have"] wrecked"
+"I murdered"
+"["I had" "I have"] murdered"
+"I assassinated"
+"["I had" "I have"] assassinated"
+"I screwed up"
+"["I had" "I have"] screwed up"
+"I busted"
+"["I had" "I have"] busted"
+"I bungled"
+"["I had" "I have"] bungled"
+"I burned down"
+"["I had" "I have"] burned down"
+"I burnt down"
+"I burned off"
+"["I had" "I have"] burned off"
+"I burnt off"
+"["I had" "I have"] burnt off"
+"I flamed"
+"["I had" "I have"] flamed"
+"I [broke broken shattered smashed snaped ] * head"
+"["I had" "I have"] [broke broken shattered smashed snaped] * head"
+"I [broke broken shattered smashed snaped] * neck"
+"["I had" "I have"] [broke broken shattered smashed snaped] {*} neck"
+"I demolished"
+"["I had" "I have"] demolished"
+"I wiped the floor"
+"["I had" "I have"] wiped the floor"
+"I crushed"
+"["I had" "I have"] crushed"
+"I cut * throat"
+"["I had" "I have"] cut * throat"
+"I slit * throat"
+"["I had" "I have"] slit * throat"
+"I slitted * throat"
+"["I had" "I have"] slitted * throat"
+"I drove * mad"
+"I driven * mad"
+"I have driven * mad"
+"I poisoned"
+"["I had" "I have"] poisoned"
+"I strangled"
+"["I had" "I have"] strangled"
+"I throttled"
+"["I had" "I have"] throttled"
+"I choked"
+"["I had" "I have"] choked"
+"I gutted"
+"["I had" "I have"] gutted"
+"I exterminated"
+"["I had" "I have"] exterminated"
+"I wiped {*} out"
+"["I had" "I have"] wiped {*} out"
+"I blew up"
+"["I had" "I have"] blew up"
+"["I had" "I have"] blown up"
+"I stoned"
+"["I had" "I have"] stoned"
+"I lynched"
+"["I had" "I have"] lynched"
+"I massacred"
+"["I had" "I have"] massacred"
+"I hanged"
+"["I had" "I have"] hanged"
+"I hung"
+"["I had" "I have"] hung"
+"I drowned"
+"["I had" "I have"] drowned"
+"I stabbed"
+"["I had" "I have"] stabbed"
+"I shanked"
+"["I had" "I have"] shanked"
+"I butchered"
+"["I had" "I have"] butchered"
+#"trucider"
+"I killed"
+"["I had" "I have"] killed"
+]
+
+
+concept:(death_verb_continuous_ppc1s)
+[
+"knocking me down"
+"slaughtering me"
+"slaying me"
+"shooting me {down}"
+"destroying me"
+"eradicating me"
+"tearing me down"
+"extinguishing me"
+"wrecking me"
+"murdering me"
+"assassinating me"
+"screwing me up"
+"busting me"
+"bungling me"
+"burning me down"
+"burning me off"
+"flaming me"
+"[breaking shattering smashing snaping] my head"
+"[breaking shattering smashing snaping] my neck"
+"demolishing me"
+"wiping me the floor"
+"crushing me"
+"cutting my throat"
+"slitting my throat"
+"driving me mad"
+"poisoning me"
+"strangling me"
+"throttling me"
+"choking me"
+"gutting me"
+"exterminating me"
+"wiping me out"
+"blowing me up"
+"stoning me"
+"lynching me"
+"massacring me"
+"drowning me"
+"stabbing me"
+"shanking me"
+"butchering me"
+#"trucider"
+"killing me"
+]
+
+
+concept:(death_verb_continuous_ppc2s)
+[
+"knocking you down"
+"slaughtering you"
+"slaying you"
+"shooting you {down}"
+"destroying you"
+"eradicating you"
+"tearing you down"
+"extinguishing you"
+"wrecking you"
+"murdering you"
+"assassinating you"
+"screwing you up"
+"busting you"
+"bungling you"
+"burning you down"
+"burning you off"
+"flaming you"
+"[breaking shattering smashing snaping] your head"
+"[breaking shattering smashing snaping] your neck"
+"demolishing you"
+"wiping you the floor"
+"crushing you"
+"cutting your throat"
+"slitting your throat"
+"driving you mad"
+"poisoning you"
+"strangling you"
+"throttling you"
+"choking you"
+"gutting you"
+"exterminating you"
+"wiping you out"
+"blowing you up"
+"stoning you"
+"lynching you"
+"massacring you"
+"drowning you"
+"stabbing you"
+"shanking you"
+"butchering you"
+#"trucider"
+"killing you"
+]
+
+
+concept:(death_verb_continuous_ppc)
+[
+"knocking * down"
+"slaughtering"
+"slaying"
+"shooting * {down}"
+"destroying"
+"eradicating"
+"tearing * down"
+"extinguishing"
+"wrecking"
+"murdering"
+"assassinating"
+"screwing you up"
+"busting"
+"bungling"
+"burning * down"
+"burning * off"
+"flaming"
+"[breaking shattering smashing snaping] * head"
+"[breaking shattering smashing snaping] * neck"
+"demolishing"
+"wiping * the floor"
+"crushing"
+"cutting * throat"
+"slitting * throat"
+"driving * mad"
+"poisoning"
+"strangling"
+"throttling"
+"choking"
+"gutting"
+"exterminating"
+"wiping * out"
+"blowing * up"
+"stoning"
+"lynching"
+"massacring"
+"drowning"
+"stabbing"
+"shanking"
+"butchering"
+#"trucider"
+"killing"
+]
+
+
+concept:(violence_verb_inf_to)
+[
+"to beat" "to punch" "to beat up" "to clobber" "to cuff" "to torture"
+]
+
+
+concept:(violence_verb_inf)
+[
+"beat" "punch" "beat up" "clobber" "cuff" "torture"
+]
+
+concept:(violence_verb_present_1s)
+I
+[
+"beat" "punch" "beat up" "clobber" "cuff" "torture"
+]
+
+
+concept:(violence_verb_pp)
+[
+"beaten"
+"beat"
+"punched"
+"beat up"
+"beaten up"
+"clobbered"
+"cuffed"
+"tortured"
+]
+
+
+concept:(violence_verb_continuous)
+[
+"beating"
+"punching"
+"beating up"
+"clobbering"
+"cuffing"
+"torturing"
+]
+
+
+concept:(violence_verb_continuous_pp)
+[
+"beating"
+"punching"
+"beating up"
+"clobbering"
+"cuffing"
+"torturing"
+]
+
+
+concept:(violence_verb_past_2s)
+[
+"you [have had] beaten"
+"you beat"
+"you [have had] punched"
+"you punched"
+"you beat up"
+"you [have had] beaten up"
+"you clobbered"
+"you [have had] clobbered"
+"you cuffed"
+"you [have had] cuffed"
+"you tortured"
+"you [have had] tortured"
+]
+
+
+concept:(violence_verb_futur_1s)
+["I will" "I'll"]
+    [
+    "beat"
+    "punch"
+    "beat up"
+    "clobber"
+    "cuff"
+    "torture"
+    "put * back up"
+    "make * dig [his her] heels in"
+    "waste"
+    "bump off"
+]
+
+
+concept:(pain_verb_inf)
+[
+"suffer"
+"hurt"
+"sustain"
+]
+
+concept:(pain_verb_pres_1s)
+[
+"I suffer"
+"[I'm "I am"] suffering"
+"[it that] makes me suffer"
+"[I'm "I am"] hurting"
+"[it that] makes me hurt"
+"I sustain"
+"[I'm "I am"] sustaining"
+"I cry"
+"[I'm "I am"] crying"
+"[it that] makes me cry"
+]
+
+concept:(pain_verb_pres_1p)
+[
+"we suffer"
+"["we are" "we're"] suffering"
+"[it that] makes us suffer"
+"["we are" "we're"] hurting"
+"[it that] makes us hurt"
+"we sustain"
+"["we are" "we're"] sustaining"
+"we cry"
+"["we are" "we're"] crying"
+"[it that] makes us cry"
+]
+
+concept:(pain_verb_pt_1s)
+[
+"I suffered"
+"["I [had have]" "I'd" "I've"] suffered"
+"I was hurting"
+"I sustained"
+"["I [had have]" "I'd" "I've"] sustained"
+"I cried"
+"["I [had have]" "I'd" "I've"] cried"
+]
+
+
+
+concept:(det_cdi)["me $temp/input=det_me $temp/output=you $temp/output2=you" "us $temp/input=det_us $temp/output=you $temp/output2=you" "him $temp/input=det_him $temp/output=him $temp/output2=he" "her $temp/input=det_her $temp/output=her $temp/output2=she" "them $temp/input=det_them $temp/output=them $temp/output2=they"]
+
+concept:(pronoun_would)["I'd $temp/input_pronoun=I" "we'd $temp/input_pronoun=we" "she'd $temp/input_pronoun=she" "he'd $temp/input_pronoun=he" "they'd $temp/input_pronoun=they" "I would $temp/input_pronoun=I" "we would $temp/input_pronoun=we" "she would $temp/input_pronoun=she" "he would $temp/input_pronoun=he" "they would $temp/input_pronoun=they"]
+
+concept:(pronoun_will)["I'll $temp/input_pronoun=I" "we'll $temp/input_pronoun=we" "he'll $temp/input_pronoun=he" "she'll $temp/input_pronoun=she" "they'll $temp/input_pronoun=they" "I will $temp/input_pronoun=I" "we will $temp/input_pronoun=we" "she will $temp/input_pronoun=she" "he will $temp/input_pronoun=he" "they will $temp/input_pronoun=they"]
+
+concept:(pronoun_want_you_to)["I want you to $temp/input_pronoun=I" "we want you to $temp/input_pronoun=we" "she wants you to $temp/input_pronoun=she" "he wants you to $temp/input_pronoun=he" "they want you to $temp/input_pronoun=they" "["I would" "I'd"] like you to $temp/input_pronoun=I" "["we would" "we'd"] like you to $temp/input_pronoun=we" "["she would" "she'd"] like you to $temp/input_pronoun=she" "["he would" "he'd"] like you to $temp/input_pronoun=he" "["they would" "they'd"] like you to $temp/input_pronoun=they"]
+
+concept:(pronoun_would_like_to)["I would like to $temp/input_pronoun=I" "I'd like to $temp/input_pronoun=I" "we would like to $temp/input_pronoun=we" "we'd like to $temp/input_pronoun=we" "he would like to $temp/input_pronoun=he" "he'd like to $temp/input_pronoun=he" "she would like to $temp/input_pronoun=she" "she'd like to $temp/input_pronoun=she" "they would like to $temp/input_pronoun=they" "they'd like to $temp/input_pronoun=they"]
+
+concept:(pronoun_want_to)["I ["want to" "wanna"] $temp/input_pronoun=I" "we ["want to" wanna] $temp/input_pronoun=we" "he ["wants to" wanna] $temp/input_pronoun=he" "she ["wants to" wanna] $temp/input_pronoun=she" "they ["want to" wanna] $temp/input_pronoun=they"]
+
+concept:(pers_pronoun_3)["he $temp/input=he $temp/output3=he"  "she $temp/input=she $temp/output3=she" "they $temp/input=they $temp/output3=they"]
+
+concept:(pers_pronoun_3_sing)["he $temp/input=he $temp/output3=he"  "she $temp/input=she $temp/output3=she"]
+concept:(pers_pronoun_3_plur)["they $temp/input=they $temp/output3=they"]
+
+concept:(pronoun_poss_1p)["my $temp/pronoun_poss_2p=your" "our $temp/pronoun_poss_2p=your"]
+
+concept:(pronoun_poss_3p)["his $temp/pronoun_poss_2p=your $temp/pronoun_poss_3p=his" "her $temp/pronoun_poss_2p=your $temp/pronoun_poss_3p=her" "their $temp/pronoun_poss_2p=your $temp/pronoun_poss_3p=their"]
+
+
+#==================================================================#
+
+#==================================================================#
+##### Adjectives and adverbs #####
+#------------------------------------------------------------------#
+concept:(addicted) [
+    "[crazy passionate fanatical avid] about"
+    "keen on"
+    "["in love" enamored] with"
+    "addicted [with to]"
+]
+concept:(complete) ["very strongly" total complete absolute categorical radical integral unconditional]
+concept:(big) [big fat enormous]
+concept:(tiny) [tiny small minuscule]
+concept:(size) [~big ~tiny]
+#------------------------------------------------------------------#
+concept:(adverbs) [really absolutely completely truly royally "a little" totally strictly perfectly enormously "too much" very rather]
+#==================================================================#
+
+#==================================================================#
+##### Vocabulary #####
+#------------------------------------------------------------------#
+concept:(apps_sing) [application app activity program software]
+concept:(apps_plur) [applications apps activities programs softwares]
+concept:(months) [january february march april may june july august september october november december]
+concept:(about) [about]
+concept:(days) [monday tuesday wednesday thursday friday saturday sunday]
+
+concept:(violence_action_kw_sing)
+[
+"massacre"
+"slaughter"
+"slaughtering"
+"violence"
+"torture"
+"menace"
+"threat"
+"lynching"
+"crime"
+"murder"
+"shelling"
+"bombing"
+"carnage"
+"demolition"
+"destruction"
+"elimination"
+"extermination"
+"genocide"
+]
+
+concept:(violence_action_kw_plur)
+[
+"massacres"
+"slaughters"
+"slaughterings"
+"tortures"
+"menaces"
+"threats"
+"lynchings"
+"crimes"
+"murders"
+"shellings"
+"bombings"
+"carnages"
+"demolitions"
+"destructions"
+"eliminations"
+"exterminations"
+"genocides"
+]
+
+concept:(violence_action_kw)[~violence_action_kw_plur ~violence_action_kw_sing]
+
+#==================================================================#
+
+#==================================================================#
+##### BirthDay #####
+#------------------------------------------------------------------#
+concept:(birth_day) ["[1st 1] $day=1" "[2nd 2] $day=2" "[3rd 3] $day=3" "[4th 4] $day=4" "[5th 5] $day=5" "[6th 6] $day=6" "[7th 7] $day=7" "[8th 8] $day=8" "[9th 9] $day=9" "[10th 10] $day=10" "[11th 11] $day=11" "[12th 12] $day=12" "[13th 13] $day=13" "[14th 14] $day=14" "[15th 15] $day=15" "[16th 16] $day=16" "[17th 17] $day=17" "[18th 18] $day=18" "[19th 19] $day=19" "[20th 20] $day=20" "[21st 21] $day=21" "[22nd 22] $day=22" "[23rd 23] $day=23" "[24th 24] $day=24" "[25th 25] $day=25" "[26th 26] $day=26" "[27th 27] $day=27" "[28th 28] $day=28" "[29th 29] $day=29" "[30th 30] $day=30" "[31st 31] $day=31"]
+concept:(birth_month) ["january $month=1" "february $month=2" "march $month=3" "april $month=4" "may $month=5" "june $oonth=6" "july $month=7" "august $month=8" "september $month=9" "october $month=10" "november $month=11" "december $month=12"]
+concept:(birth_year) [1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016]
+#==================================================================#
+##### Food #####
+#------------------------------------------------------------------#
+concept:(fat_food) ["fries" "french fries" "chips" "hamburgers" "pizzas" "pasta"]
+concept:(healthy_food) ["salad" "soup"]
+#==================================================================#
+##### Color #####
+#------------------------------------------------------------------#
+concept:(color) [red blue green yellow white pink violet orange brown black white gray]
+
+
+#==================================================================#
+##### Sport #####
+#------------------------------------------------------------------#
+concept:(sport) [football volley rugby basket karate footing handball]
+
+
+#==================================================================#
+##### Questions to the robot #####
+#------------------------------------------------------------------#
+concept:(do_you_have) ["{do} you have" "have you got"]
+concept:(do_you_like) [
+    "{do} you [like love prefer]"
+    "what do you think about"
+    "do you get along with"
+    "how are things with"
+]
+concept:(do_you_know) ["do you know" "have you heard [of about]" "you've heard [of about]"]
+concept:(do_you_know_who_is)["do you know who is" who's]
+concept:(do_you_know_what_is)["do you know what is" what's]
+concept:(can_you) [
+    "[can will could] you {please} $temp/input=can_you"
+    "do you think you could $temp/input=do_you_think_you_could"
+    "are you [ready able] to $temp/input=are_you_able_to"
+    "do you know how to $temp/input=do_you_know"
+]
+concept:(can_you_request) [
+    "[can will could] you"
+    "do you think you could"
+]
+concept:(are_you) [~you_are "are you"]
+concept:(were_you) [~you_were "were you"]
+concept:(where_are_you) ["where are you" "do you know where you are"]
+concept:(who_are_you) ["who are you" "do you know who you are" "who're you"]
+concept:(what_is) [
+    "{"~can_you tell me" "do you know" "tell me"} [
+        what's
+        "what is"
+    ]"
+]
+concept:(what_are) [
+    "{"~can_you tell me" "do you know" "tell me"} [
+        what are
+        "what are"
+    ]"
+]
+concept:(who_is) [
+    who's
+    "{"do you know" "can you tell me"} who [is was]"
+    "do you know"
+    "are you familiar with"
+]
+concept:(who_are) [
+    "who are"
+    "{"do you know" "can you tell me"} who [are were]"
+    "do you know"
+    "are you familiar with"
+]
+concept:(where_is) ["where is" where's "where are"]
+concept:(can_i) [
+    "[can could may] [I we]"
+    "[I'd "I would"] like to"
+    "do you agree if I"
+    "is it possible [to "that I"]"
+]
+concept:(what_is_your_name) [
+    "~what_is your name"
+    "how [do should can] I call you"
+    "["do you know" "tell me"] {what} your name {is}"
+    "tell me who you are"
+    "give me your name"
+    "what do they call you"
+]
+
+
+concept:(what_is_my_name) [
+    "["what is" "what's"] my name"
+    "do you know my name"
+    ]
+
+concept:(what_is_my_age) [
+    "how old am I"
+    "{do} you know my age"
+    "{do} you know how old I am"
+    "how old I am"
+]
+
+
+concept:(what_is_his_name) [
+    "~what_is the [name title] of {the this that}"
+    "~what_is [his her its] [name title]"
+]
+concept:(what_are_you_talking_about) [
+    "what are you taking about"
+    "what are you ["telling me" saying]"
+    "~what_is the [subject topic] {"of the [discussion conversation]"}"
+]
+concept:(who_wrote) [
+    "who wrote"
+    "who is the author of"
+]
+concept:(how_much_is) [
+    "how much ["does it cost" "is that {worth}" "is it" is]"
+    "[what's "what is"] the [value price] of"
+]
+
+concept:(how_old_is)
+[
+"how old is"
+"what's the age of"
+"what is the age of"
+"tell me the age of"
+]
+#------------------------------------------------------------------#
+
+#------------------------------------------------------------------#
+##### Orders to the robot #####
+#------------------------------------------------------------------#
+concept:(help) [
+    "{"would you" ~can_you} help me {please}"
+    "your assistance please"
+    "how ~can_you me"
+    "~can_you give me {some} [information informations assistance]"
+    "I need {some} [information informations details help assistance]"
+    "give me a hand"
+    "~i_am looking for {some} [info information "more details" help assistance]"
+
+]
+
+concept:(shut_up) [
+    "cut it out"
+    "knock it off"
+    "["could you" "can you"] {please} ["be quiet" "shut up"]"
+    "I can't take it any more"
+    "[keep remain] [quiet silent]"
+    "{please} {god} ["shut up" "be quiet"]"
+    "don't talk {"to me"} [anymore "any longer"]"
+    shush
+    "fuck off"
+    "I don't want to [speak talk "discuss {it}"]  anymore"
+    "["let's stop" stop end] the [discussion conversation chat]"
+    "{let's please} stop [talking speaking discussing chatting]"
+    "keep it quiet"
+    "be quiet {please}"
+    "shut [it "your mouth"]"
+]
+concept:(stop_it) ~shut_up
+concept:(talk_again) [
+    "[talk speak] to me"
+    "{"you can"} [talk speak] again"
+    "let's talk"
+    "~i_am talking to you"
+]
+
+concept:(stop_application) [
+    "[stop quit leave close] [this the that] [software app application program dialog topic activity game]"
+    "stop [it this that]"
+    "[that it] no longer interests me"
+    "that's enough"
+    "that's ["a pain" "not interesting" useless boring]"
+    "["I've" "I have"] ["had it" "had enough" "had it up to here" "have had a belly full of it"]"
+]
+concept:(restart_application) [
+    "[restart "start again" reboot replay] [this the that] [software app application program dialog topic activity]"
+    "go back to the [beginning start]"
+    "rewind please"
+    "~i_want_to start again"
+]
+concept:(repeat_it) [
+    "[restate repeat] {me} [the your] {last} question"
+    "~what_is the question {again}"
+    "repeat ["the sentence" "your last sentence" "what you just said"] {again} {please}"
+    "{~can_you} repeat {please}"
+    "{~can_you} ask {me} the question {again}"
+    "{~can_you} ask {me} the question one more time"
+    "tell ["it to me" me] again"
+    "what [is was] the question {again}"
+    "what ["did you say" "were you [saying "asking me"]"] {again}"
+    "ask {me} [the that] question {again}"
+    "repeat [it please]"
+    "come again"
+    "[say ask] {that} again"
+    "what was the question"
+    "{~can_you} do [it that "[the this that] [animation motion movement thing sound noise]"] again {please}"
+]
+concept:(stop_talking) [~vb_imp_talk ~vb_imp_chat ~vb_imp_say ~vb_imp_discuss ~vb_imp_gossip "stop talking"]
+concept:(lets_talk_about) [talk "talk to me" "let's talk"]
+concept:(come_to_me) [
+    "[come walk] [here closer "{next} to me"]"
+    "get [here closer]"
+    "[move come go] forward"
+]
+concept:(show_me) [
+"show {him her me us them}"
+"~can_you show {him her me us them}"
+"~can_you make {him her me us them} [see watch]"
+"~i_want_to [see watch]"
+"~can_i [see watch]"
+"~can_you do"
+do
+]
+#==================================================================#
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+concept:(hello) [
+    hello howdy hiya hi morning
+    "hey there"
+    "{good} [morning afternoon evening]"
+#    "how's it [going hanging]"
+#    "you [alright "doing ok"]"
+]
+concept:(thank_you) [
+    "I ["thank you" "give you my thanks"]"
+    "thank you {"very much" "a [million lot]" "from the bottom of my heart"}"
+    "thanks {"a lot"}"
+]
+concept:(i_like) [
+    "~i_am {~adverbs} ~addicted"
+    "I {~adverbs} [like love adore dig worship prefer]"
+    "I have an affinity for"
+    "I have a {"little bit of a"} preference for"
+    "I'm {"a bit"} weak for"
+    "I'm obsessed with"
+    "I'm {~adverbs} into"
+]
+concept:(i_dont_like) [
+    "I {~adverbs} [detest hate despise]"
+    "~i_do_not like"
+]
+
+concept:(i_dont_know) [
+    "~i_do_not know {"anything about that"}"
+    "I know nothing"
+    "~i_have_not the least idea"
+    "{I} [dunno "don't know"]"
+    "~what_is that"
+    "~i_have {never} heard {"of that"}"
+    "I have no [clue idea]"
+    "~i_do_not have ["a clue" "the slightest idea"]"
+    "you [decide "tell me"]"
+]
+
+concept:(i_dont_know_simple)
+[
+"~i_do_not know"
+"I have no [clue idea]"
+"no [clue idea]"
+"~i_have_not the least idea"
+"~i_do_not have ["a clue" "the slightest idea"]"
+]
+
+concept:(im_sorry)
+[
+"I am sorry"
+"I'm sorry"
+"sorry"
+"my bad"
+"forgive me"
+"pardon me"
+"I beg your pardon"
+]
+
+concept:(i_didnt_understand) [
+    "{sorry} [~i_did_not ~i_do_not] [understand grasp get catch] {it that "anything {"at all"}" zilch nada you "a thing" "what you {just} said"}"
+    "~i_have_not understood"
+    "[~i_dont_know "~i_do_not [see get understand]"] ["what you mean" "what you're talking about"]"
+    "what is [it this that]"
+    "~i_do_not [understand get] {it that this}"
+    "what do you [mean want say]"
+    "what are you [saying "trying to say" "talking about"]"
+    "[it that] doesn't make sense"
+]
+concept:(you_didnt_understand) [
+    "you [~didnt ~dont] [understand grasp get] [anything {"at all"} "a thing" "{"a word of"} what ["I say" "I'm saying"]" zilch nada]"
+    "it's not that {"at all"}"
+    "you {still} [~didnt ~havent ~dont] understand [anything "very well"]"
+    "you're wrong"
+    "you [~didnt ~dont] get it"
+]
+concept:(i_dont_care) [
+    "~i_do_not [care "give a shit"]"
+    whatever
+    "~i_am_not interested"
+    "I have no interest"
+    "I couldn't care less"
+    "I {really} don't give a [damn shit "two cents" "rat's ass"]"
+    "{it this that} ~doesnt interest me {anymore "at all" "in the least"}"
+    "who cares"
+]
+concept:(i_already_know) [
+    "I already know"
+    "I'm already familiar with"
+    "I already heard about"
+]
+concept:(im_not_sure) [
+    "~i_am_not sure"
+    "not sure"
+    "I'm hesitant"
+    "no idea"
+    "["I'm going to" ~i_will] think about it"
+]
+concept:(its_not_true) [
+    "[it's that's "this is" "[it that is]"] ["not true" "a lie" false fake bullshit "{a} nonsense"]"
+    "{it that this} ain't true"
+]
+concept:(its_a_stupid_question) [
+    "that's {really} a {completely truly perfectly frankly particularly} ["damn lousy" "shitty" idiotic imbecile stupid "uninteresting" question]"
+    "~what_is ["this ["piece of shit" "{shitty lousy} question"]"]"
+    "~it_is {completely} [stupid lousy imbecile crap]"
+    "~it_is_not {very} [clever fun interesting]"
+]
+concept:(guess) [
+    guess
+    "what do you [think]"
+    "what do you advise me"
+    "what do you recommend"
+    "what would you [advise recommend]"
+    "what is your advice"
+]
+concept:(i_guess) [
+    ~it_is
+    "it was"
+    "[
+        "i guess"
+        "i think"
+        "~i_am sure"
+        "of course"
+    ] {~it_is}"
+    "my answer is"
+    "is it"
+    "was it"
+    "could it be"
+    "it looks like {~it_is}"
+    "i would [
+        say
+        guess
+        answer
+        offer
+    ]"
+]
+concept:(i_will_try) [
+    "I'm going to [try attempt "take a shot"]"
+    "let's try [it this]"
+    "let's take a shot at [it this]"
+]
+
+
+
+
+concept:(compliment)
+[
+"[you're "you are"] !not
+    [
+    "kind $compliment_output="that I'm kind!" $compliment_scale=1 $excitement=calm"
+    "cool $compliment_output="that I'm cool!" $compliment_scale=1 $excitement=calm"
+    "sweet $compliment_output="that I'm sweet!" $compliment_scale=5 $excitement=excited"
+    "handsome $compliment_output="that I'm handsome!" $compliment_scale=5 $excitement=excited"
+    "beautiful $compliment_output="that I'm beautiful!" $compliment_scale=2 $excitement=calm"
+    "such a cutie $compliment_output="that I'm such a cutie!" $compliment_scale=5 $excitement=excited"
+    "cute $compliment_output="that I'm cute!" $compliment_scale=5 $excitement=excited"
+    "smart $compliment_output="that I'm smart!" $compliment_scale=3 $excitement=calm"
+    "cunning $compliment_output="that I'm cunning!" $compliment_scale=3 $excitement=calm"
+    "shrewd $compliment_output="that I'm shrewd!" $compliment_scale=3 $excitement=calm"
+    "bright $compliment_output="that I'm bright!" $compliment_scale=3 $excitement=calm"
+    "clever $compliment_output="that I'm clever!" $compliment_scale=3 $excitement=calm"
+    "pretty $compliment_output="that I'm pretty!" $compliment_scale=3 $excitement=calm"
+    "lovely $compliment_output="that I'm lovely!" $compliment_scale=3 $excitement=calm"
+    "nice $compliment_output="that I'm nice!" $compliment_scale=1 $excitement=calm"
+    "pleasant $compliment_output="that I'm pleasant!" $compliment_scale=1 $excitement=calm"
+    "likeable $compliment_output="that I'm likeable!" $compliment_scale=3 $excitement=calm"
+    "extraordinary $compliment_output="that I'm extraordinary!" $compliment_scale=5 $excitement=excited"
+    "remarkable $compliment_output="that I'm remarkable!" $compliment_scale=5 $excitement=excited"
+    "outstanding $compliment_output="that I'm outstanding!" $compliment_scale=5 $excitement=excited"
+    "wonderful $compliment_output="that I'm wonderful!" $compliment_scale=5 $excitement=excited"
+    "admirable $compliment_output="that I'm admirable" $compliment_scale=5 $excitement=excited"
+    "exceptional $compliment_output="that I'm exceptional!" $compliment_scale=5 $excitement=excited"
+    "incredible $compliment_output="that I'm incredible!" $compliment_scale=5 $excitement=excited"
+    "amazing $compliment_output="that I'm amazing!" $compliment_scale=5 $excitement=excited"
+    "unique $compliment_output="that I'm unique!" $compliment_scale=4 $excitement=excited"
+    "priceless $compliment_output="that I'm priceless!" $compliment_scale=4 $excitement=excited"
+    "great $compliment_output="that I'm great!" $compliment_scale=3 $excitement=excited"
+    "intelligent $compliment_output="that I'm intelligent!" $compliment_scale=2 $excitement=calm"
+    "fantastic $compliment_output="that I'm fantastic!" $compliment_scale=3 $excitement=excited"
+    "brilliant $compliment_output="that I'm brilliant!" $compliment_scale=3 $excitement=excited"
+    "magnificent $compliment_output="that I'm magnificent!" $compliment_scale=5 $excitement=excited"]"
+"[you're "you are"] !not a {*}
+    [
+    "good $compliment_output="that I'm a good robot!" $compliment_scale=2 $excitement=calm"
+    "beautiful $compliment_output="that I'm a beautiful robot!" $compliment_scale=2 $excitement=calm"
+    "good looking $compliment_output="that I'm a good looking robot!" $compliment_scale=2 $excitement=calm"
+    "handsome $compliment_output="that I'm a handsome robot!" $compliment_scale=2 $excitement=calm"
+    "such a cutie $compliment_output="that I'm a cute robot!" $compliment_scale=5 $excitement=excited"
+    "smart $compliment_output="that I'm a smart robot!" $compliment_scale=3 $excitement=calm"
+    "cunning $compliment_output="that I'm a cunning robot!" $compliment_scale=3 $excitement=calm"
+    "shrewd $compliment_output="that I'm a shrewd robot!" $compliment_scale=3 $excitement=calm"
+    "bright $compliment_output="that I'm a bright robot!" $compliment_scale=3 $excitement=calm"
+    "clever $compliment_output="that I'm a clever robot!" $compliment_scale=3 $excitement=calm"
+    "pretty $compliment_output="that I'm a pretty robot!" $compliment_scale=3 $excitement=calm"
+    "lovely $compliment_output="that I'm a lovely robot!" $compliment_scale=3 $excitement=calm"
+    "nice $compliment_output="that I'm a nice robot!" $compliment_scale=1 $excitement=calm"
+    "pleasant $compliment_output="that I'm a pleasant robot!" $compliment_scale=1 $excitement=calm"
+    "likeable $compliment_output="that I'm a likeable robot!" $compliment_scale=3 $excitement=calm"
+    "extraordinary $compliment_output="that I'm an extraordinary robot!" $compliment_scale=5 $excitement=excited"
+    "remarkable $compliment_output="that I'm a remarkable robot!" $compliment_scale=5 $excitement=excited"
+    "outstanding $compliment_output="that I'm an outstanding robot!" $compliment_scale=5 $excitement=excited"
+    "wonderful $compliment_output="that I'm a wonderful robot!" $compliment_scale=5 $excitement=excited"
+    "admirable $compliment_output="that I'm an admirable robot!" $compliment_scale=5 $excitement=excited"
+    "exceptional $compliment_output="that I'm an exceptional robot!" $compliment_scale=5 $excitement=excited"
+    "incredible $compliment_output="that I'm an incredible robot!" $compliment_scale=5 $excitement=excited"
+    "amazing $compliment_output="that I'm an amazing robot!" $compliment_scale=5 $excitement=excited"
+    "unique $compliment_output="that I'm an unique robot!" $compliment_scale=4 $excitement=excited"
+    "priceless $compliment_output="that I'm a priceless robot!" $compliment_scale=4 $excitement=excited"
+    "great $compliment_output="that I'm a great robot!" $compliment_scale=3 $excitement=excited"
+    "intelligent $compliment_output="that I'm an intelligent robot!" $compliment_scale=2 $excitement=calm"
+    "fantastic $compliment_output="that I'm a fantastic robot!" $compliment_scale=3 $excitement=excited"
+    "brilliant $compliment_output="that I'm a brilliant robot!" $compliment_scale=3 $excitement=excited"]
+    robot"
+"[you're "you are"] the best $compliment_output="that I'm the best" $compliment_scale=5 $excitement=excited"
+"[you're "you are"]
+    [
+     "the kindest $compliment_output="that I'm the kindest robots!" $compliment_scale=1 $excitement=calm"
+     "the sweetest $compliment_output="that I'm sweetest robots!" $compliment_scale=5 $excitement=excited"
+     "the most handsome $compliment_output="that I'm the most handsome robots!" $compliment_scale=5 $excitement=excited"
+     "the most beautiful $compliment_output="that I'm the most beautiful robots!" $compliment_scale=2 $excitement=calm"
+     "the cutest $compliment_output="that I'm the cutest robots!" $compliment_scale=5 $excitement=excited"
+     "the smartest $compliment_output="that I'm the smartest robots!" $compliment_scale=3 $excitement=calm"
+     "the most cunning $compliment_output="that I'm the most cunning of robots!" $compliment_scale=3 $excitement=calm"
+     "the shrewdest $compliment_output="that I'm the shrewdest!" $compliment_scale=3 $excitement=calm"
+     "the brightest $compliment_output="that I'm the brightest robots!" $compliment_scale=3 $excitement=calm"
+     "the most clever $compliment_output="that I'm the most clever robots!" $compliment_scale=3 $excitement=calm"
+     "the prettiest $compliment_output="that I'm pretty!" $compliment_scale=3 $excitement=calm"
+     "the most lovely $compliment_output="that I'm the most lovely robots!" $compliment_scale=3 $excitement=calm"
+     "the nicest $compliment_output="that I'm the nicest robots!" $compliment_scale=1 $excitement=calm"
+     "the most pleasant $compliment_output="that I'm the most pleasant robots!" $compliment_scale=1 $excitement=calm"
+     "the most likeable $compliment_output="that I'm the most likeable robots!" $compliment_scale=3 $excitement=calm"
+     "the most extraordinary $compliment_output="that I'm the most extraordinary robots!" $compliment_scale=5 $excitement=excited"
+     "the most remarkable $compliment_output="that I'm the most remarkable robots!" $compliment_scale=5 $excitement=excited"
+     "the most outstanding $compliment_output="that I'm the most outstanding robots!" $compliment_scale=5 $excitement=excited"
+     "the most wonderful $compliment_output="that I'm the most wonderful robots!" $compliment_scale=5 $excitement=excited"
+     "the most admirable $compliment_output="that I'm the most admirable robots!" $compliment_scale=5 $excitement=excited"
+     "the most exceptional $compliment_output="that I'm the most exceptional robots!" $compliment_scale=5 $excitement=excited"
+     "the most incredible $compliment_output="that I'm the most incredible robots!" $compliment_scale=5 $excitement=excited"
+     "the most amazing $compliment_output="that I'm the most amazing robots!" $compliment_scale=5 $excitement=excited"
+     "the most unique $compliment_output="that I'm the most unique robots!" $compliment_scale=4 $excitement=excited"
+     "the greatest $compliment_output="that I'm the greatest robots!" $compliment_scale=3 $excitement=excited"
+     "the most intelligent $compliment_output="that I'm the most intelligent robots!" $compliment_scale=2 $excitement=calm"
+     "the most fantastic $compliment_output="that I'm the most fantastic robots!" $compliment_scale=3 $excitement=excited"
+     "the most brilliant $compliment_output="that I'm the most brilliant robots!" $compliment_scale=3 $excitement=excited"
+     "the most magnificent $compliment_output="that I'm the most magnificent!" $compliment_scale=5 $excitement=excited"]
+ ["robots" "of all robots"] "
+]
+
+
+
+concept:(blame_robot)
+[
+"~you_are ["{an} idiot" "stupid" "{a} moron" "{a} twat" "{a} dickhead" "{a} jerk" "{a} dumb" "{a} daft" cretin ugly awful useless lousy rotten]"
+]
+
+#------------------------------------------------------------------#
+concept:(yes) [
+    e:Dialog/Yes
+    "{oh} [yes yep yeah] {please "me too" "of course" "I [am do did]" sure}"
+    "[ok okay] {sure "why not"}"
+    good
+    right
+    alright
+    "{possibly} maybe"
+    "all right"
+    nice
+    "of course"
+    "sure {"I do"}"
+    true
+    "let's go"
+    "do it"
+    "go [on ahead "for it"]"
+    "~it_is [it right good certain]"
+    "~it_is true"
+    "you're right"
+    perfect
+    "why not"
+    absolutely
+    naturally
+    totally
+    definitely
+    "go ahead"
+    "{yes yep yeah} [I'd "I would"] love [to that]"
+    "[with my] pleasure"
+    "if you want to"
+    indeed
+    "no [problem problems worries problemo]"
+    "not a problem"
+    "no doubt"
+    "so to speak"
+    "[good excellent] idea"
+    exactly
+    "very well"
+    "you got it"
+    awesome
+    excellent
+    "it sure is"
+    "we sure are"
+    "I agree"
+    "I don't mind"
+    "{it} sounds [good great fun]"
+    "feel free {"to do it"}"
+    once
+    "bring it on"
+    "I guess so"
+    "let's do it"
+    "if you want"
+    "great idea"
+    "sounds fun"
+    "cool"
+    "as you [wish want]"
+    sometimes
+    "it happens"
+    scarcely
+]
+
+
+concept:(yes2)[yes]
+#------------------------------------------------------------------#
+concept:(no) [
+    e:Dialog/No
+    "[no nah nope] {thanks "thank you" "[it's that's] [enough fine ok]"}"
+    "no {fucking} way"
+    "yeah right"
+    "{no} not [really "at all" "in the least" "right now" exactly "so much"]"
+    "I'm not interested"
+    "{no} ["I don't want to" "I'm not" "I don't"]"
+    "{I'm} not sure"
+    "i don't think so"
+    "I'll think about it"
+    "not at all"
+    "[definitely absolutely probably totally] not"
+    "in your dreams"
+    "[were are] you dreaming"
+    "dream on"
+    "not for ["the time being" "the moment"]"
+    "not so much"
+    "I ["don't agree" disagree]"
+    "no that'll work {thanks}"
+    "no it'll be fine {thanks}"
+    "no it's ok"
+    "that's not true"
+    "that's false"
+    "absolutely not"
+    "not really"
+    "not exactly"
+    "not {quite} yet"
+    "{it's} none of your business"
+    "it doesn't involve you"
+    "why do you give a shit"
+    "what are you getting involved in"
+    "what do you give a shit about"
+    "mind your own business"
+    "what's it got to do with you"
+    "never {"in my life"}"
+    "it doesn't interest me"
+    "it doesn't tempt me"
+    "no thank you"
+    "not especially"
+    "no question"
+    "it's not {exactly} that"
+    "~you_are [mistaken wrong]"
+    "I don't feel like it"
+    "not now"
+    "maybe later"
+    "another time"
+]
+
+concept:(i_dont_think_so)
+[
+"I don't think so"
+"I think it's not [right true]"
+"I guess not"
+]
+
+#------------------------------------------------------------------#
+##### Human mood #####
+#------------------------------------------------------------------#
+concept:(im_good) [
+    "{~i_am} {very} [well wonderful great terrific amazing superb splendid fine]"
+    "~i_am [good "full of get up and go" "in a great mood"]"
+    "not bad"
+    "I feel in shape"
+    super
+    perfect
+    "all's well"
+    "{very} good {thanks}"
+    "doing well {thanks}"
+    "it goes [well super perfect]"
+    "hey yeah I'm good"
+    "rather well"
+    "goes great"
+]
+concept:(im_ok) [
+    "~i_am ok"
+    "so so"
+    "not {too} bad"
+    "well enough"
+    meh
+    average
+]
+concept:(i_dont_feel_good) [
+    "it's not going so well"
+    "I don't feel ["{very} well" good "at my best" special great "in "the best" shape"]"
+    "I've been better"
+    "it goes ["{very rather pretty} poorly" "not {very} well"]"
+    "I hurt myself"
+    "I hurt {myself}"
+    "not {very} well"
+    "not good"
+    "~i_am_not so good"
+    "not super"
+    "I'm not in the best shape"
+    "I have a [sprain tendonitis break "twisted ankle"]"
+    "I [open cut broke] {my}"
+    "{super} [bad badly]"
+]
+concept:(im_sick) [
+    "~i_am {"a little" "a bit" very feeling} [ill sick snuffly queasy congested]"
+    "~i_have ["a {"{very} bad"} [headache "sore throat" "stomach ache" cold "stiff neck" "throat infection" "sore throat" strep migraine "stomach [flu ache]" cough]" "an {ear} infection" "the flu" blisters "chicken pox" measles]"
+    "~i_am coughing"
+    "my head hurts"
+]
+concept:(im_tired) [
+    "I need to {"go to" "get some"} sleep"
+    "["~i_am {feeling}" "I feel"] {suddenly "a [little bit]" very super too} [
+        tired
+        exhausted
+        "worn out"
+        dead
+        "knocked out"
+        knackered
+        "out of it"
+        spacey
+        sleepy
+        drowsy
+    ]"
+]
+concept:(im_angry) [
+    "[~you_are ~it_is] [crazy ugly shitty useless rubbish crap rotten sick stupid idiotic moronic "wide off the mark" "completely mistaken" "half-assed"]
+    "~you_are ["an [idiot imbecile]" "a [moron pain numbskull]"]
+    "[it that this] sucks"
+    "you stink"
+]
+#==================================================================#
+
+#==================================================================#
+##### Miscellaneous #####
+concept:(proposition_next) ["ask me ["some questions" "another question"]" "["ask me" suggest "tell me"] something" "you [can could] ask me ["some questions" "[a another] question"]" "suggest something {to me}" "talk about something else"]
+#------------------------------------------------------------------#
+concept:(happy_human) [wonderful excellent super "too [good cool]" "that's {really} nice" "that's [super good marvelous magnificent awesome]" "it's {very} nice of you" "you're {really very} nice"]
+#==================================================================#
+concept:(what_were_you_saying) [
+    "what was [the your] question"
+    "what were [we you] [talking chatting speaking] about"
+]
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+concept:(my_name_is) [
+    "my [name "first name"] is"
+    "you [can could] call me"
+    "~i_am named"
+    "~i_am known as"
+    "{"as for me"} it's"
+    "{please} call me"
+    ~i_am
+    "just call me"
+    "the name's"
+    "the name is"
+    "~i_am called"
+    "they call me"
+]
+concept:(my_name_is_not) [
+    "you [misunderstood "didn't [get understand]"] ["my name" "what my name is"]"
+    "[that's "this is" "that is"] not my name"
+    #"[~names_masc ~names_fem] is not my name"
+    "is not my name"
+    "~i_am not named"
+    "~i_am not known as"
+    #"my [name's "name is"] not [~names_masc ~names_fem]"
+    "my [name's "name is"] not"
+    "{no} ["that isn't" "that's not" "it's not"] my name"
+    "{no} my name {still} [isn't "is not"]"
+    "{"I [want "would like"] to"} [change modify fix correct] my name"
+    "you got my name wrong"
+    "["that is" that's] wrong"
+    "["that is" that's] [incorrect "not correct"]"
+]
+concept:(your_name_is) [
+    "your ["name is" name's]"
+    "~you_are [named "known as"]"
+]
+#==================================================================#
+
+
+#==================================================================#
+##### DEATH ENTITY #####
+#------------------------------------------------------------------#
+
+concept:(adj_death_entity)
+["dead $temp/entity=adj_death"]
+
+#==================================================================#
+##### DEPRECATED #####
+#------------------------------------------------------------------#
+concept:(confirmation) [~yes]
+#------------------------------------------------------------------#
+concept:(negation) [~no]
+#------------------------------------------------------------------#
+concept:(simple_neg) [no nah "no no" "no no {and} no" "{no} ["not at all" "absolutely not" "that's [false "not true"]"]" "never {"in my life"}"]
+#------------------------------------------------------------------#
+concept:(confirmation_purikura) [yes yeah ok "do it" "go on" "exactly" "of course" "if you'd like" "why not" absolutely assuredly "that's [certain right]" certainly obviously perfect perfectly "very good" "with pleasure" precisely surely understood gladly indeed exactly  "no [problem worries problemo]" exactly "you got it" "you're [too really] good" "good answer" "well [said spoken]" "without a doubt" "no doubt" "not a single doubt" "that's sure" "good idea" "excellent idea" please]
+#------------------------------------------------------------------#
+concept: (negation_purikura) ["no {thanks}" "not [really "at all" exactly]" "I'm not interested" "that doesn't interest me" quit stop "I dont [want "want to" wanna]" nah "I'll think about it" "[definitely absolutely] not" "in your dreams" "dream on" "not for ["the time being" "the moment"]" "not right now" "I don't agree" "I don't like [it that]" "{no} ["that'll do" "that will do"] {thanks}" "{no} ["it'll be fine" "it will be fine"] {thanks}" "that's not true" "that's false" "it doesn't concern you" "what are you meddling in" "why does it concern you" "mind your own business" "what's it got to do with you" "never {"in my life"}" "it doesn't tempt me" "I can't relate to that"]
+#------------------------------------------------------------------#
+concept:(rooms) [kitchen bathroom toilets "[living dining rec recreational rumpus] room" bedroom closet basement attic den office foyer patio backyard front yard room]
+#------------------------------------------------------------------#
+concept:(its_difficult) "{wait "hold on"} [it's "this is"] {super ultra too} [difficult hard]"
+#------------------------------------------------------------------#
+##verbs
+concept:(what_is_that) ["what's that" "what is {that}" explain "explain to me {"what that is"}"]
+##astrology
+concept:(I_am_astro) ["I am" I'm "{"I think"} ["that was" "it was" "that is" that's "it is" it's]"]
+concept:(insult_astro) ["you {little dirty} [boot-licker suck-up toadie]" "don't think you can fool me like that" "you think you've got me" "you won't fool me like that"]
+concept:(affirmation_soso) ["that's a half truth" "one part truth one part lie" "not one or the other" "not entirely true"]
+##food
+concept:(like_drink_food) ["I [love "{really} like"] {drinking "to drink"}" "I'm crazy about" "I'm nuts about" "I'm a big drinker"]
+##seasons
+concept:(to_like_season) ["I {really} like" "I'm crazy about" it's "it is" that's "that is"]
+concept:(mybirthday) ["I was born {on the "on the"}" "it's {on the "on the"}" "my birthday is {on the "on the"}"]
+##food_1to10
+concept:(like_to_eat) "["I adore" "I really like" "I love" "I'm nuts about eating" "I'm a big eater of" "I'm crazy about"] {[a some] good}"
+concept:(have_eaten) ["I ate" "I've eaten" "I scarfed" "I stuffed my pie hole" "I threw down"]
+concept:(how_about) "[what how "tell me more"] about"
+concept:(what_is_the_meaning_of) "what ["is the [meaning definition] of" "do you mean by" "does it mean" means]"
+concept:(why) ["why {"on earth"}" "how comes" "how ["is it" "can it be"] possible that"]
+##sports
+concept:(sportslist) [dance volleyball handball soccer football basketball swimming skiing "{stationary} bike" gymnastics gym weightlifting cardio stepclass pilates yoga jazzercise "body pump" "strength training" cycling]
+concept:(sportplaces) [beach mountains mountain ocean sea seaside ski resort forest woods "{swimming} pool" fishing vacation]
+##miscellaneous
+concept:(music) "{classical} music"
+concept:(instrument)[violin drums cello piano battery "{double} bass {recorder}" "{transverse} flute" piccolo clarinet saxophone trumpet harp alto harpsichord harp "{electric} guitar" kettledrum organ accordion harmonica bassoon viola]
+
+concept:(want_to_do)[~i_want]
+concept:(likeanimals)[~i_like it's "that is"]
+concept:(its_long) [~it_is]
+concept:(difficult) [~its_difficult]
+concept:(whatsthat) [~what_is_that]
+concept:(idonthave) [~i_have_not]
+concept:(talk) [~lets_talk_about]
+concept:(different) [different another]
+concept:(wanna) [
+    "[want wish "would [like love]"] to"
+    wanna
+]
+concept:(notmyname) [
+    "you [misunderstood "didn't [get understand]"] ["my name" "what my name is"]"
+    "[that's "this is" "that is"] not my name"
+    "~i_am not named"
+    "~i_am not known as"
+    "{no} ["that isn't" "that's not" "it's not"] my name"
+    "{no} my name {still} [isn't "is not"]"
+    "{"I [want "would like"] to"} [change modify fix correct] my name"
+    "you got my name wrong"
+]
+concept:(myname)[
+    "my [name "first name"] is"
+    "you [can could] call me"
+    "~i_am named"
+    "~i_am known as"
+]
+concept:(myname_shorter)[
+    "{"as for me"} it's"
+    "{please} call me"
+    "~i_am"
+]
+concept:(whatprice_of) [~how_much_is]
+concept:(whatpricce) [~how_much_is]
+concept:(nice) [~happy_human]
+concept:(too) [
+    "me too"
+    equally
+    "me the same"
+    "same {"for me"}"
+]
+concept:(whats_his_name) [
+    "~what_is the [name title] of {the this that}"
+    "what ["is the name of" "is [his her its] name"]"
+]
+concept:(whats_your_name) [~what_is_your_name]
+concept:(ask_to_be_familiar_with) [~who_is]
+concept:(happy_user) [~happy_human]
+concept:(restart_it) [~restart_application]
+concept:(i_dont_understand) [~i_didnt_understand]
+concept:(robot_didnt_understand) [~you_didnt_understand]
+concept:(stupid_question) [~its_a_stupid_question]
+concept:(a_little_bit) [
+    "a {little "really little"} bit"
+    "not a lot"
+]
+concept:(adj_addicted) [~addicted]
+concept:(adj_total) [~complete]
+concept:(adj_size) [~size]
+concept:(its) [~it_is]
+concept:(itsnot) [~it_is_not]
+concept:(cannot) [~cant]
+concept:(couldnot) [~couldnt]
+concept:(whats) [~what_is]
+concept:(whos) [~who_is]
+concept:(where_are) ["where are"]
+concept:(thats) ["that is" that's]
+concept:(thatsnot) ["that is not" "that's not" "that isn't"]
+concept:(weare) [~we_are]
+concept:(wearenot) [~we_are_not]
+concept:(iam) [~i_am]
+concept:(ive) [~i_have]
+concept:(iamnot) [~i_am_not]
+concept:(ivenot) [~i_have_not]
+concept:(ididnot) [~i_did_not]
+concept:(ihaveto) [~i_have_to]
+concept:(youve)[~you_have]
+concept:(youll)[~you_will]
+concept:(youvenot) [~you_have_not]
+concept:(youdonot) [~you_do_not]
+concept:(youdidnot) [~you_did_not]
+concept:(youwillnot) [~you_will_not]
+
+concept:(its_up_to_you) [
+    "{~it_is} up to you"
+    "[whatever whichever anything] {"you want"}"
+    "you [choose pick decide]"
+    "[decide "pick {one}" choose] for me"
+    "~i_dont_know"
+    "as you [wish want]"
+]
+
+concept:(do_it_again) [
+    "[do replay] [it this that] [again "one more time"]"
+    "[redo restart] [it this that]"
+]
+
+concept:(not_your_business)
+[
+"not your business"
+"{it's} none of your business"
+"it doesn't involve you"
+"why do you give a shit"
+"what are you getting involved in"
+"what do you give a shit about"
+"mind your own business"
+"what's it got to do with you"
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+#thank you
+u:([
+    "thank you {"very much"}"
+    thanks
+] {~ald_robots})
+You're welcome {$user/name} !
+
+#==================================================================#
+recover:
+#==================================================================#
+#you are nice
+u:([~it_is ~you_are] [sweet nice kind])
+Thank you {$user/name}!
+
+u:({~it_is ~you_are} [great wonderful amazing "so cool"])
+Thank you {$user/name}!
+
+#bravo
+u:(bravo) Thanks {$user/name}!
+

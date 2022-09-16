@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/seeing_RulesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/white"
+            android:text="@string/rules"
+            android:textColor="@color/inovex_blue"
+            android:onClick="@{() -> viewmodel.onRulesClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/seeing_previewView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintBottom_toTopOf="@+id/seeing_resultsButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/seeing_resultsView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintBottom_toTopOf="@+id/seeing_resultsButtons"
+            app:layout_constraintEnd_toEndOf="@+id/seeing_previewView"
+            app:layout_constraintStart_toStartOf="@+id/seeing_previewView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/seeing_resultsButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/seeing_resultsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="#AAFFFFFF"
+                    android:textAlignment="center"
+                    android:textColor="@color/inovex_blue"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/seeing_previewButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Einen Mensch" />
+
+                <ToggleButton
+                    android:id="@+id/seeing_previewButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/inovex_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textOff="@string/hidePreview"
+                    android:textOn="@string/showPreview"
+                    android:onClick="@{() -> viewmodel.onPreviewClicked()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="de.inovex.pepper.intelligence.mlkit.ui.seeing.SeeingViewModel" />
+    </data>
+</layout>

@@ -1,0 +1,60 @@
+topic: ~intelligence()
+
+# Concepts
+#############################################
+concept:(myhello) [hola buenas "hola que tal" "[buenos buenas] [días tardes noches]"] {pepper}
+concept:(ready) ["listo" "{ya} estoy listo" "ya está"]
+concept:(recognizing) ^rand["déjame pensar un momento" "okei, a ver, qué podría ser?" "ah! ya sé! qué fácil!" "a ver, déjame que lo piense"]
+concept:(correctguess) ^rand["bien!" "lo sabía!" "genial!" "qué guay! por cierto qué dibujo tan bonito"]
+concept:(again) ^rand["jugamos otra vez, no?" "jugamos otra vez?" "quieres volver a jugar?" "qué guay, otra vez?" "quieres que hagamos otra ronda?"]
+###################################################################################################################
+# PEPPER INTELLIGENCE
+###################################################################################################################
+
+u:(~myhello) %activeGreetingBookmark hey \pau=500\ hola! \pau=500\ yo soy Pepper \pau=500\
+
+u:(^empty) %demoRulesBookmark ["Hola, bienvenido a esta aplicacion demo en la que te enseño todo lo que puedo hacer gracias al M L Kit de google!"]
+
+# DRAWING GAME
+u:(^empty) %drawingRulesBookmark Hey! vamos a jugar a un juego de dibujar y adivinar! \pau=600\ Piensa en algo y dibújalo en mi táblet!  \pau=600\ Usando machín lerning yo intentaré adivinar lo que es. También puedes usar el modo texto y leeré lo que has escrito. Estás preparado?
+    u1:(si) genial! \pau=600\ vamos allá! \pau=600\ %startGameBookmark \pau=600\ cuando hayas terminado di listo o dale al botón
+    u1:(no) vale, quizás más tarde
+
+u:(dibujar) %startDrawingBookmark
+
+u:(~ready) %readyToRecognizeBookmark
+u:(^empty) %recognizedDrawingBookmark ~recognizing \pau=500\ Yo diría \pau=500\ $recognizedDrawing \pau=1000\ es correcto?
+    u1:(si) ~correctguess \pau=500\  ~again %clearBookmark
+    u1:(no) ouch! \pau=500\ quieres intentarlo otra vez? %clearBookmark
+
+u:(^empty) %notRecognizeDrawingBookmark hmmm la verdad es que no se me ocurre qué puede ser... quieres intentarlo otra vez?
+    u1:(si) genial
+    u1:(no) vale, quizás más tarde
+
+u:(^empty) %recognizedInovexBookmark Ah eso lo conozco, me encanta inovex!
+u:(^empty) %changedModeBookmark vamos a jugar con $GameMode
+
+
+# READING
+u:(^empty) %readingRulesBookmark Demo de leer! Muéstrame un texto y pídeme que lea lo que pone \pau=400\ puedo leerlo!
+u:(leer) %startReadingBookmark
+concept:(readthat) ["lee esto" "lee eso" "qué pone {ahí aquí}" "qué dice {ahí aquí}" "lee [esto eso] {"por favor"}" "puedes leer [esto eso] {"por favor"}" "cómo se llama este libro" "qué libro es este"]
+u:(~readthat) %recognizedTextBookmark Ahí pone \pau=500\ $recognizedText
+
+# SEEING
+u:(^empty) %seeingRulesBookmark Demo de ver! Pregúntame lo que veo \pau=400\ Puedo decir todo lo que hay a mi alrededor
+concept:(askedwhatdoyousee) ["qué ves" "qué puedes ver" "qué es esto {"de aquí"}" "qué hay ["en la habitación" "a tu alrededor"] " "ves algo" "puedes ver algo" "qué objeto es este {"de aquí"}" "sabes lo que es esto" "reconoces esto" "puedes reconocer esto" "dime {lo} que es esto"]
+concept:(whereis) ["dónde está [el la] _*" "dónde ves [el la] _*" "dónde se encuentra [el la] _*" "sabes dónde está [el la] _*" "dónde encuentro [el la] _*" "dónde hay [un una] _*"]
+u:(ver) %startSeeingBookmark
+u:(~askedwhatdoyousee) %recognizedInImageBookmark["^exist(recognizedInImage) Veo \pau=500\ $recognizedInImage" "No veo nada"]
+u:(~whereis) $objectToLocate=$1 %askedWhereItIsBookmark $1 está ahí
+u:(^empty) %notFoundBookmark Uy, ha pasado algo, no puedo señalar dónde está porque no puedo reproducir la animación
+
+
+# TRANSLATING
+u:(^empty) %translatingRulesBookmark Demo de traducción! Pregúntame cómo se dice una palabra o una frase en otro idioma \pau=400\ Además de español ahora mismo también puedo hablar inglés y alemán
+u:(traducir) %startTranslatingBookmark
+concept:(askedtotranslate) ["[que qué] [es significa] _* en _[alemán inglés]" "[como cómo] {"es" "se dice"} _* en [inglés alemán]" "[traducir traduce] _* a _[alemán inglés]"]
+u:(~askedtotranslate) %askedToTranslateBookmark $textToTranslate=$1 $toLanguage=$2 $pronounceTranslationBookmark="" un momento
+u:(^empty) %translatedBookmark $textToTranslate en $toLanguage se dice %pronounceTranslationBookmark
+u:(^empty) %TranslationNotPossibleBookmark Lo siento. No voy a poder traducir $textToTranslate a $toLanguage porque de momento sólo hablo inglés, español y alemnán. Lo siento

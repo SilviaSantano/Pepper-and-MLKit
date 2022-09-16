@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pepper and MLKit</string>
+    <string name="permission_deny_text">Cerrando la aplicación, ya que no han sido aceptados los permisos.</string>
+    <string name="title_activity_main" translatable="false">Pepper ML Kit Label Detector</string>
+    <string name="german">Deutsch</string>
+    <string name="english">English</string>
+    <string name="spanish">español</string>
+    <string name="wrong_language_title_dialog">ATENCIÓN</string>
+    <string name="wrong_language_message_dialog">Actualmente este contenido sólo está disponible en alemán, español e inglés. Para continuar, cambie el lenguaje de la tablet.</string>
+    <string name="changedModeBookmark">changedModeBookmark</string>
+    <string name="GameMode">GameMode</string>
+    <string name="drawingMode">Dibujo</string>
+    <string name="textMode">Texto</string>
+    <string name="recognizedDrawing">recognizedDrawing</string>
+    <string name="notRecognizeDrawingBookmark">notRecognizeDrawingBookmark</string>
+    <string name="text_draw">Dibujo / Texto</string>
+    <string name="clear">Borrar</string>
+    <string name="recognize">Adivinar</string>
+    <string name="rules">Reglas</string>
+    <string name="demoRulesBookmark">demoRulesBookmark</string>
+    <string name="startDrawingBookmark">startDrawingBookmark</string>
+    <string name="startReadingBookmark">startReadingBookmark</string>
+    <string name="startSeeingBookmark">startSeeingBookmark</string>
+    <string name="game">Jugar</string>
+    <string name="readyToRecognizeBookmark">readyToRecognizeBookmark</string>
+    <string name="recognizedDrawingBookmark">recognizedDrawingBookmark</string>
+    <string name="recognizedInovexBookmark">recognizedInovexBookmark</string>
+    <string name="recognizedText">recognizedText</string>
+    <string name="askedToReadBookmark">askedToReadBookmark</string>
+    <string name="recognizedInImage">recognizedInImage</string>
+    <string name="recognizedInImageBookmark">recognizedInImageBookmark</string>
+    <string name="clearBookmark">clearBookmark</string>
+    <string name="showPreview">Mostrar Preview</string>
+    <string name="hidePreview">Ocultar Preview</string>
+    <string name="inovex">inovex</string>
+    <string name="notFoundBookmark">notFoundBookmark</string>
+    <string name="askedWhereItIsBookmark">askedWhereItIsBookmark</string>
+    <string name="objectToLocate">objectToLocate</string>
+    <string name="askedToTranslateBookmark">askedToTranslateBookmark</string>
+    <string name="textToTranslate">textToTranslate</string>
+    <string name="toLanguage">toLanguage</string>
+    <string name="translatedBookmark">translatedBookmark</string>
+    <string name="textTranslated">textTranslated</string>
+    <string name="pronounceTranslationBookmark">pronounceTranslationBookmark</string>
+    <string name="startTranslatingBookmark">startTranslatingBookmark</string>
+    <string name="TranslationNotPossibleBookmark">TranslationNotPossibleBookmark</string>
+    <string name="readingRulesBookmark">readingRulesBookmark</string>
+    <string name="seeingRulesBookmark">seeingRulesBookmark</string>
+    <string name="translatingRulesBookmark">translatingRulesBookmark</string>
+    <string name="drawingRulesBookmark">drawingRulesBookmark</string>
+</resources>

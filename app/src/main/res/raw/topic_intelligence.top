@@ -1,0 +1,58 @@
+topic: ~intelligence()
+
+# Concepts
+#############################################
+concept:(myhello) [mahlzeit "was geht" hi "he du" "{guten} [morgen tag abend]" hey hei pepper hallo servus moin] {pepper}
+concept:(ready) ["fertig" "ich bin fertig"]
+concept:(recognizing) ^rand["lass mich kurz denken" "okay, moment, was könnte das sein?" "ach sehr einfach!" "lass mich kurz überlegen"]
+concept:(correctguess) ^rand["super!" "ich wusste es!" "toll! freut mich" "cool! eine schöne Zeichnung hast du gemacht"]
+concept:(again) ^rand["lass uns nochmal spielen, ja?" "möchtest du nochmal spielen?" "möchtest du es wieder versuchen?" "das war cool, lass uns nochmal spielen" "hast du lust auf noch eine runde?"]
+###################################################################################################################
+# PEPPER INTELLIGENCE
+###################################################################################################################
+
+u:(~myhello) %activeGreetingBookmark hey \pau=500\ grüß dich \pau=500\ ich bin Pepper \pau=500\
+
+u:(^empty) %demoRulesBookmark ["Hi, willkommen zu dieser Demo Ap in der ich zeige wie viel ich mithilfe von Googles M L Kit machen kann! Ich kann Texte Lesen, ich kann erkennen was es um mich herum gibt, ich kann übersetzen und sogar das lustige Spiel Montagsmaler mit dir spielen! Worauf hast du lust? Wähle eine Demo"]
+
+# DRAWING GAME
+u:(^empty) %drawingRulesBookmark Lass uns ein Zeichenspiel spielen! Kennst du das Spiel Montagsmaler? \pau=600\ Denk dir was aus und zeichne es auf meinem Tablet!  \pau=600\ Mithilfe von machine lerning werde ich versuchen zu erraten, was das ist.  \pau=600\  Bist du bereit?
+    u1:(~yes) wunderbar! \pau=600\ ich bin gespannt! \pau=600\ los geht's! %startGameBookmark \pau=600\  sag fertig oder klicke auf dem Knopf wenn du fertig bist
+    u1:(~no) okay, vielleicht später!
+
+u:(* montagsmaler *) %startDrawingBookmark
+
+u:(~ready) %readyToRecognizeBookmark
+u:(^empty) %recognizedDrawingBookmark ~recognizing \pau=500\ Ich würde sagen \pau=500\ $recognizedDrawing \pau=1000\ ist das richtig?
+    u1:(~yes) ~correctguess \pau=500\ ~again %clearBookmark
+    u1:(~no) ups! versuch es gerne nochmal %clearBookmark
+
+u:(^empty) %notRecognizeDrawingBookmark hmmm ich kann nicht sagen, was das ist. Möchtest du es nochmal versuchen?
+    u1:(~yes) super
+    u1:(~no) okay, vielleicht später!
+
+u:(^empty) %recognizedInovexBookmark Ah das kenne ich, ich liebe inovex!
+u:(^empty) %changedModeBookmark wir spielen jetzt mit $GameMode
+
+# READING
+u:(^empty) %readingRulesBookmark Lesen demo! Zeig mir einen Text und frag mich was da steht. \pau=400\ Ich kann ihn lesen!
+u:(lesen) %startReadingBookmark
+concept:(readthat) ["lies das {da hier}" "lies dies {da hier}" "was steht hier" "was steht da" "kannst du das {bitte} lesen" "was sagt {es} hier" "wie heißt dieses buch" "welches buch ist das"]
+u:(~readthat) %recognizedTextBookmark ["^exist(recognizedText) Da steht \pau=500\ $recognizedText" "Ich kann gerade leider nichts erkennen"]
+
+# SEEING
+u:(^empty) %seeingRulesBookmark Sehen demo! Frag mich was ich see \pau=400\ Ich kann dir sagen was es um mich herum gibt!
+u:(sehen) %startSeeingBookmark
+concept:(askedwhatdoyousee) ["was siehst du" "was kannst du sehen" "was ist das {hier}" "was gibt es in dem Raum" "siehst du was" "kannst du etwas sehen" "welches objekt ist das {hier}" "weißt du was das {hier} ist" "erkennst du das" "kannst du das erkennen" "sag {mir} {mal} was das ist"]
+concept:(whereis) ["wo ist [der die das] _*" "wo siehst du [den die das] _*" "wo befindet sich [der die das] _*" "weißt du wo [der die das] _* ["ist" "sich befindet"]" "wo finde ich [den die das] _*" "wo gibt es [eine ein] _*" "wo [liegt steht liegen stehen] [der die das] _*"]
+u:(~askedwhatdoyousee) %recognizedInImageBookmark ["^exist(recognizedInImage) Ich sehe \pau=500\ $recognizedInImage" "Ich kann gerade leider nichts erkennen"]
+u:(~whereis) $objectToLocate=$1%askedWhereItIsBookmark $1 ist da
+u:(^empty) %notFoundBookmark Ups etwas ist schief gelaufen, ich kann nicht zeigen, wo das Objekt ist weil ich die Animation nicht ausführen kann
+
+# TRANSLATING
+u:(^empty) %translatingRulesBookmark Übersetzung demo! Frag mich wie ein Wort oder ein Satz auf einer anderen Sprache heißt. \pau=400\ Aktuell kann ich außer Deutsch auch Englisch und Spanisch
+u:(übersetzen) %startTranslatingBookmark
+concept:(askedtotranslate) ["was [ist heißt bedeutet] _* auf _[englisch spanisch]" "wie sagt man _* auf _[englisch spanisch]" "übersetze _* auf _[englisch spanisch]" "{kannst du} _* auf _[englisch spanisch] übersetzen"]
+u:(~askedtotranslate) $textToTranslate=$1 $toLanguage=$2 $pronounceTranslationBookmark="" moment %askedToTranslateBookmark
+u:(^empty) %translatedBookmark $textToTranslate heißt auf $toLanguage %pronounceTranslationBookmark
+u:(^empty) %TranslationNotPossibleBookmark Sorry. Ich kann $textToTranslate auf $toLanguage leider nicht übersetzen da ich aktuell nur Englisch, Deutsch und Spanisch kann

@@ -1,0 +1,58 @@
+topic: ~intelligence()
+
+# Concepts
+###############################################
+concept:(myhello) [hi hey hello morning "good {evening afternoon morning}"] {pepper}
+concept:(ready) ["ready" "i'm ready" "done" "i'm done" "i am ready" "i am done"]
+concept:(recognizing) ^rand["mmm let me think just a moment" "okay, give me a second, what could that be?" "oh, that one's easy!" "let me think about it"]
+concept:(correctguess) ^rand["yay super!" "i knew it!" "cool! I'm glad" "cool! you've done a very nice drawing"]
+concept:(again) ^rand["let's play one more time" "do you want to play again?" "would you like to play once more?" "that was cool, let's do it again" "are you up for another round?"]
+###################################################################################################################
+# PEPPER USECASES
+###################################################################################################################
+
+#u:(["hello pepper" hi hello "hi pepper" ~myhello]) %initialisedBookmark %activeGreetingBookmark ^disable(defaultAnswer) hey \pau=500\ nice to meet you \pau=500\ I am Pepper
+
+u:(^empty) %demoRulesBookmark ["Hi, welcome to this demo app in which I can show you all I can do with the help of Googles M L Kit!"]
+
+# DRAWING GAME
+u:(^empty) %drawingRulesBookmark Hey, let's play a drawing game! \pau=600\ Think of something and draw it on my Tablet!  \pau=600\ Using machine learning I will try to recognize what that is. Are you ready?
+    u1:(~yes) great! \pau=600\ let's see %startGameBookmark \pau=600\ say done or press the button when you're done
+    u1:(~no) okay, maybe later!
+
+u:(drawing) %startDrawingBookmark
+
+u:(~ready) %readyToRecognizeBookmark
+u:(^empty) %recognizedDrawingBookmark ~recognizing \pau=500\ I would say it's a \pau=500\ $recognizedDrawing \pau=1000\ is it correct?
+    u1:(~yes) ~correctguess \pau=500\  ~again %clearBookmark
+    u1:(~no) ouch! please try again %clearBookmark
+
+u:(^empty) %notRecognizeDrawingBookmark hmmm I can't really say what that is... would you like to try again?
+    u1:(~yes) great
+    u1:(~no) okay, maybe later!
+
+u:(^empty) %recognizedInovexBookmark Ah I know that one, I love inovex!
+u:(^empty) %changedModeBookmark let's now play with $GameMode
+
+# READING
+u:(^empty) %readingRulesBookmark Reading demo! Show me a text and ask me to read what it says \pau=400\ I can read it!
+u:(read) %startReadingBookmark
+concept:(readthat) ["read [this that] {please}" "what does it say [there here]" "what's written [there here]" "can you {please} read [this that]"]
+u:(~readthat) %recognizedTextBookmark It says \pau=500\ $recognizedText
+
+# SEEING
+u:(^empty) %seeingRulesBookmark Seeing demo! Ask me what I see \pau=400\ I can tell you all that is around me
+concept:(askedwhatdoyousee) ["what do you see" "what can you see" "what is this" "what's [that this]" "what's ["in the room" "around you"] " "do you see [something anything]" "can you see [something anything]" "["what" "what [sort kind] of"] object is [this that]" "do you know what [this that] is" "do you recognize this" "tell me what [this that] is"]
+concept:(whereis) ["where is the _*" "where do you see the _*" "do you know where the _* ["is" "is at" "is located"]" "where do i find the _*" "where is there a _*"]
+u:(see) %startSeeingBookmark
+u:(~askedwhatdoyousee) %recognizedInImageBookmark I see \pau=500\ ["^exist(recognizedInImage) $recognizedInImage" "nothing"]
+u:(~whereis) $objectToLocate=$1 %askedWhereItIsBookmark $1 is there
+u:(^empty) %notFoundBookmark Oops, something happened, I can't show you where that is because i can not run the animation
+
+# TRANSLATING
+u:(^empty) %translatingRulesBookmark Translate demo! Ask me to translate a word or a sentence into another language \pau=400\ Besides English right now I can also speak german and spanish
+u:(translate) %startTranslatingBookmark
+concept:(askedtotranslate) ["how do you say _* in _[german spanish]" "[what's "what is"] _* in _[german spanish]" "["what is" what's] the meaning of _* in _[german spanish]" "{"can you" "could you"} translate _* [into to] _[german spanish]"]
+u:(~askedtotranslate) %askedToTranslateBookmark $textToTranslate=$1 $toLanguage=$2 $pronounceTranslationBookmark="" just a moment
+u:(^empty) %translatedBookmark $textToTranslate in $toLanguage is %pronounceTranslationBookmark
+u:(^empty) %TranslationNotPossibleBookmark I'm afraid I can't translate $textToTranslate to $toLanguage since I currently only speak English, German and Spanish. I'm sorry about that

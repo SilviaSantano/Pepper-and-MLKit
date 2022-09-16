@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#036ABC</color>
+    <color name="currentStrokePaint">#036ABC</color>
+    <color name="recognizedStrokePaint">#4CAFFD</color>
+    <color name="inovex_blue">#003C7E</color>
+</resources>

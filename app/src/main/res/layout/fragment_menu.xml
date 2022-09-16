@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/menu_rulesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/white"
+            android:text="@string/rules"
+            android:textColor="@color/inovex_blue"
+            android:visibility="visible"
+            android:onClick="@{() -> viewmodel.onDemoRulesClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/menu_drawingButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:background="@drawable/draw"
+                android:onClick="@{() -> viewmodel.onDrawingClicked()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/menu_readingButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:background="@drawable/read"
+                android:onClick="@{() -> viewmodel.onReadingClicked()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/menu_drawingButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/menu_seeingButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:background="@drawable/see"
+                android:onClick="@{() -> viewmodel.onSeeingClicked()}"
+                app:layout_constraintEnd_toStartOf="@+id/menu_translatingButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menu_drawingButton" />
+
+            <ImageButton
+                android:id="@+id/menu_translatingButton"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:background="@drawable/translate"
+                android:onClick="@{() -> viewmodel.onTranslatingClicked()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menu_readingButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel" />
+    </data>
+</layout>
