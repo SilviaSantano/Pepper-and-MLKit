@@ -12,7 +12,7 @@ import android.view.MotionEvent
 import android.view.View
 import com.google.mlkit.vision.digitalink.Ink
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
+import de.inovex.pepper.intelligence.mlkit.R
 import de.inovex.pepper.intelligence.mlkit.ui.drawing.StrokeManager.ContentChangedListener
 import timber.log.Timber
 

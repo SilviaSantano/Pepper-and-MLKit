@@ -39,7 +39,7 @@ u:(^empty) %changedModeBookmark vamos a jugar con $GameMode
 u:(^empty) %readingRulesBookmark Demo de leer! Muéstrame un texto y pídeme que lea lo que pone \pau=400\ puedo leerlo!
 u:(leer) %startReadingBookmark
 concept:(readthat) ["lee esto" "lee eso" "qué pone {ahí aquí}" "qué dice {ahí aquí}" "lee [esto eso] {"por favor"}" "puedes leer [esto eso] {"por favor"}" "cómo se llama este libro" "qué libro es este"]
-u:(~readthat) %recognizedTextBookmark Ahí pone \pau=500\ $recognizedText
+u:(~readthat) ["^exist(recognizedText) Ahí pone \pau=500\ $recognizedText" "Lo siento, pero ahora mismo no veo ningún texto"]
 
 # SEEING
 u:(^empty) %seeingRulesBookmark Demo de ver! Pregúntame lo que veo \pau=400\ Puedo decir todo lo que hay a mi alrededor

@@ -9,7 +9,7 @@ import com.aldebaran.qi.sdk.QiContext
 import com.aldebaran.qi.sdk.`object`.conversation.QiChatbot
 import com.aldebaran.qi.sdk.`object`.conversation.Topic
 import dagger.hilt.android.lifecycle.HiltViewModel
-import de.inovex.pepper.intelligence.R
+import de.inovex.pepper.intelligence.mlkit.R
 import de.inovex.pepper.intelligence.mlkit.pepper.PepperActions
 import de.inovex.pepper.intelligence.mlkit.ui.translating.TextTranslator
 import de.inovex.pepper.intelligence.mlkit.utils.Language

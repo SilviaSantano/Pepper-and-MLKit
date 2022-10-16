@@ -17,7 +17,6 @@ class ImageAnalyzer {
         localModel: LocalModel,
         completion: (List<DetectedObject>?) -> Unit
     ) {
-
         val image = InputImage.fromBitmap(picture, 0)
         val options = CustomObjectDetectorOptions.Builder(localModel)
             .setDetectorMode(ObjectDetectorOptions.SINGLE_IMAGE_MODE)

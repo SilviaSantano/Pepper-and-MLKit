@@ -60,6 +60,15 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/translating_resultsButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/translate_google" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

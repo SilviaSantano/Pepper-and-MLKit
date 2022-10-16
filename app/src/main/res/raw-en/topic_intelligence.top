@@ -38,7 +38,7 @@ u:(^empty) %changedModeBookmark let's now play with $GameMode
 u:(^empty) %readingRulesBookmark Reading demo! Show me a text and ask me to read what it says \pau=400\ I can read it!
 u:(read) %startReadingBookmark
 concept:(readthat) ["read [this that] {please}" "what does it say [there here]" "what's written [there here]" "can you {please} read [this that]"]
-u:(~readthat) %recognizedTextBookmark It says \pau=500\ $recognizedText
+u:(~readthat) ["^exist(recognizedText) It says \pau=500\ $recognizedText" "Sorry, I don't see any text right now"]
 
 # SEEING
 u:(^empty) %seeingRulesBookmark Seeing demo! Ask me what I see \pau=400\ I can tell you all that is around me

@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
-import de.inovex.pepper.intelligence.databinding.FragmentReadingBinding
+import de.inovex.pepper.intelligence.mlkit.R
+import de.inovex.pepper.intelligence.mlkit.databinding.FragmentReadingBinding
 import de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel
 import de.inovex.pepper.intelligence.mlkit.utils.toggleVisibility
 import timber.log.Timber

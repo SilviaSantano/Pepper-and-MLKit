@@ -3,7 +3,6 @@ package de.inovex.pepper.intelligence.mlkit
 import android.app.Application
 import android.util.Log
 import dagger.hilt.android.HiltAndroidApp
-import de.inovex.pepper.intelligence.BuildConfig
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.util.concurrent.ExecutorService

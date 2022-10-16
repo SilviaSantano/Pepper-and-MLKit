@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
-import de.inovex.pepper.intelligence.databinding.FragmentMenuBinding
+import de.inovex.pepper.intelligence.mlkit.R
+import de.inovex.pepper.intelligence.mlkit.databinding.FragmentMenuBinding
 import de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel
 
 @AndroidEntryPoint

@@ -11,8 +11,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.google.mlkit.common.model.LocalModel
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
-import de.inovex.pepper.intelligence.databinding.FragmentSeeingBinding
+import de.inovex.pepper.intelligence.mlkit.R
+import de.inovex.pepper.intelligence.mlkit.databinding.FragmentSeeingBinding
 import de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel
 import de.inovex.pepper.intelligence.mlkit.utils.HEIGHT
 import de.inovex.pepper.intelligence.mlkit.utils.Language
@@ -54,7 +54,7 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
         }
 
         // Reset results text
-        updateRecognizedText("")
+        updateRecognizedTextChatVariable("")
 
         // Custom OD Model
         val localModel = LocalModel.Builder()
@@ -78,42 +78,39 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
             viewModel.analyzeImageWithMLKitObjectDetector(localModel, image)
         }
 
+        // This gets triggered when the results of the analyzer are ready
         viewModel.getMLKitRecognitionObjects().observe(viewLifecycleOwner) { objects ->
-
+            // Prepare the chat variable including all results, translating if necessary
             var labelsText = ""
-
             objects.forEach {
-                if (it.labels.size > 0 && it.labels[0].confidence > 0.35) {
+                if (it.labels.size > 0 && it.labels[0].confidence > MIN_CONFIDENCE) {
                     if (labelsText.isNotBlank()) labelsText += ", "
                     labelsText += "  ${it.labels[0].text}"
                 }
             }
-            Timber.i("Image analyzed: ${objects.size} objects found. Labels: $labelsText")
-
-            // Translate if the robot language is other than english and update the text
             when (mainViewModel.language) {
-                Language.ENGLISH -> updateRecognizedText(labelsText)
+                Language.ENGLISH -> updateRecognizedTextChatVariable(labelsText)
                 else -> mainViewModel.translate(
                     Language.ENGLISH,
                     mainViewModel.language,
                     labelsText
-                )
-                    .addOnSuccessListener {
-                        updateRecognizedText(it)
-                    }
+                ).addOnSuccessListener {
+                    updateRecognizedTextChatVariable(it)
+                }
             }
 
-            // Calculate in which area they are and show the bounding boxes
+            // Create list of objects to be shown over the preview
             try {
                 requireActivity().runOnUiThread {
                     if (binding.seeingResultsView.height > 0 && binding.seeingResultsView.width > 0) {
                         items = mutableListOf()
-
                         objects.forEach {
                             var firstLabel = ""
-                            if (it.labels.size < 0 || it.labels[0].confidence < 0.35)
+                            if (it.labels.size <= 0 || it.labels[0].confidence < MIN_CONFIDENCE) {
                                 return@forEach
+                            }
 
+                            // Translate labels if the robot language is other than english and update the text
                             when (mainViewModel.language) {
                                 Language.ENGLISH -> firstLabel = it.labels[0].text
                                 else -> mainViewModel.translate(
@@ -122,6 +119,7 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
                                     it.labels[0].text
                                 ).addOnSuccessListener { firstLabel = it }
                             }
+                            // Add the label, the confidence and the bounding box
                             items.add(
                                 Recognition(
                                     firstLabel,
@@ -130,7 +128,8 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
                                 )
                             )
                         }
-                        updateBoundingBox(calculateObjectArea(items))
+                        // Calculate in which area the objects are and update the bounding boxes
+                        showResults(calculateObjectArea(items))
                     }
                 }
             } catch (e: Exception) {
@@ -156,22 +155,12 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
         binding.seeingPreviewView.toggleVisibility()
     }
 
-    private fun updateRecognizedText(text: String) {
-        Timber.d("Translation: $text")
-
-        try {
-            /*requireActivity().runOnUiThread {
-                binding.seeingResultsTextView.text = text
-            }*/
-        } catch (e: Exception) {
-            Timber.w("Could not show recognition results due to $e")
-        }
-
+    private fun updateRecognizedTextChatVariable(text: String) {
         // Save the results in a variable for them to available in the chat
         mainViewModel.setQiChatVariable(getString(R.string.recognizedInImage), text)
     }
 
-    private fun updateBoundingBox(objects: List<Recognition>) {
+    private fun showResults(objects: List<Recognition>) {
         val recognizedBoundingBox = RecognizedBoundingBox(
             binding.seeingResultsView,
             resources.getColor(R.color.recognizedStrokePaint, requireActivity().theme)
@@ -189,7 +178,7 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
 
         // Draw results: bounding box and label of those with the highest confidence (a maximum of 3 items)
         for (i in objects) {
-            if (i.confidence < 0.35) {
+            if (i.confidence < MIN_CONFIDENCE) {
                 continue
             }
             i.location.left += 300
@@ -207,27 +196,32 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
                 (i.confidence * 100).toInt()
             )
 
-            // Draw center
-            /*recognizedBoundingBox.drawPoint(
-                canvas,
-                PointF(i.location.centerX(), i.location.centerY())
-            )*/
-
             // Apply changes
             binding.seeingResultsView.setImageBitmap(recognizedBoundingBox.mutableBitmap)
         }
     }
 
-// / POINTING //////////////////////////////////////////////////////////////////
+    // POINTING //////////////////////////////////////////////////////////////////
 
     fun locateObject() {
-        val name = mainViewModel.getQiChatVariable(getString(R.string.objectToLocate))
-        // TODO TRANSLATE
+        var name = mainViewModel.getQiChatVariable(getString(R.string.objectToLocate))
+
+        // Translate if necessary
+        if (mainViewModel.language != Language.ENGLISH) {
+            mainViewModel.translate(
+                Language.ENGLISH,
+                mainViewModel.language,
+                name
+            ).addOnSuccessListener { name = it }
+        }
+
+        // Get the area of the asked object finding the object in the list
         val area =
             items.find {
                 it.label == name.lowercase()
             }?.area ?: Area.NONE
         Timber.d("Asked to locate object: $name which is in area: $area")
+
         doAnimationForTheArea(area)
     }
 
@@ -241,7 +235,8 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
                     i.area = Area.ONE
                 }
                 Range.create(
-                    (HEIGHT / 3).toFloat(), 2 * (HEIGHT / 3).toFloat()
+                    (HEIGHT / 3).toFloat(),
+                    2 * (HEIGHT / 3).toFloat()
                 )
                     .contains(i.location.centerX()) &&
                     Range.create(0.0F, (HEIGHT / 2).toFloat())
@@ -291,26 +286,27 @@ class SeeingFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun doAnimationForTheArea(area: Area) {
-        var animation: Int? = null
-
-        Timber.d("Doing animation for area: $area")
-
-        when (area) {
-            Area.ONE -> animation = R.raw.raise_left_hand_b006
-            Area.TWO -> animation = R.raw.raise_right_hand_b007
-            Area.THREE -> animation = R.raw.raise_right_hand_b006
-            Area.FOUR -> animation = R.raw.raise_left_hand_a003
-            Area.FIVE -> animation = R.raw.raise_both_hands_b001
-            Area.SIX -> animation = R.raw.raise_right_hand_a001
-            Area.NONE -> mainViewModel.goToQiChatBookmark(getString(R.string.notFoundBookmark))
+        val animation = when (area) {
+            Area.ONE -> R.raw.raise_left_hand_b006
+            Area.TWO -> R.raw.raise_right_hand_b007
+            Area.THREE -> R.raw.raise_right_hand_b006
+            Area.FOUR -> R.raw.raise_left_hand_a003
+            Area.FIVE -> R.raw.raise_both_hands_b001
+            Area.SIX -> R.raw.raise_right_hand_a001
+            Area.NONE -> null
         }
 
-        if (animation != null) {
+        animation?.let {
+            Timber.d("Doing animation for area: $area")
             mainViewModel.pepperActions.doAnimationAsync(
                 requireContext(),
                 mainViewModel.qiContext,
                 animation
             )
-        }
+        } ?: run { mainViewModel.goToQiChatBookmark(getString(R.string.notFoundBookmark)) }
+    }
+
+    companion object {
+        const val MIN_CONFIDENCE = 0.35
     }
 }

@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
-import de.inovex.pepper.intelligence.databinding.FragmentTranslatingBinding
+import de.inovex.pepper.intelligence.mlkit.R
+import de.inovex.pepper.intelligence.mlkit.databinding.FragmentTranslatingBinding
 import de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel
 import de.inovex.pepper.intelligence.mlkit.utils.Language
 import de.inovex.pepper.intelligence.mlkit.utils.languageMap
@@ -84,7 +84,9 @@ class TranslatingFragment : Fragment() {
 
         if (toLanguage != Language.OTHER) {
             mainViewModel.translate(
-                mainViewModel.language, toLanguage!!, textToTranslate
+                mainViewModel.language,
+                toLanguage!!,
+                textToTranslate
             ).addOnSuccessListener { text ->
                 Timber.d("The translation is '$text'")
                 goToTranslatedBookmark(text)

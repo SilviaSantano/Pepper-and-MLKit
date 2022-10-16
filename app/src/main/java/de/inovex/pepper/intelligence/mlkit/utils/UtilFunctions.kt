@@ -6,7 +6,7 @@ import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import de.inovex.pepper.intelligence.R
+import de.inovex.pepper.intelligence.mlkit.R
 
 fun showLoadingIndicator(
     loadingIndicator: RelativeLayout,
@@ -37,7 +37,6 @@ fun showFragment(supportFragmentManager: FragmentManager, fragment: Fragment, ta
 
 fun replaceFragment(supportFragmentManager: FragmentManager, fragment: Fragment, tag: String?) {
     if (supportFragmentManager.findFragmentByTag(tag)?.isVisible != true) {
-
         // Begin the transaction
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
 

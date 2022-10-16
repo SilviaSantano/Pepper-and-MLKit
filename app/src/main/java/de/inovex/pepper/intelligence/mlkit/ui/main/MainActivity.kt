@@ -16,13 +16,17 @@ import com.aldebaran.qi.sdk.RobotLifecycleCallbacks
 import com.aldebaran.qi.sdk.design.activity.RobotActivity
 import com.aldebaran.qi.sdk.design.activity.conversationstatus.SpeechBarDisplayStrategy
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
+import de.inovex.pepper.intelligence.mlkit.R
 import de.inovex.pepper.intelligence.mlkit.ui.drawing.DrawingFragment
-import de.inovex.pepper.intelligence.mlkit.utils.*
 import de.inovex.pepper.intelligence.mlkit.ui.menu.MenuFragment
 import de.inovex.pepper.intelligence.mlkit.ui.reading.ReadingFragment
 import de.inovex.pepper.intelligence.mlkit.ui.seeing.SeeingFragment
 import de.inovex.pepper.intelligence.mlkit.ui.translating.TranslatingFragment
+import de.inovex.pepper.intelligence.mlkit.utils.Language
+import de.inovex.pepper.intelligence.mlkit.utils.hideLoadingIndicator
+import de.inovex.pepper.intelligence.mlkit.utils.replaceFragment
+import de.inovex.pepper.intelligence.mlkit.utils.showFragment
+import de.inovex.pepper.intelligence.mlkit.utils.showLoadingIndicator
 import timber.log.Timber
 import java.util.*
 
@@ -96,16 +100,20 @@ class MainActivity : RobotActivity(), RobotLifecycleCallbacks {
         viewModel.uiEvents.observe(this) {
             when (it) {
                 MainViewModel.UiEvent.NavigateToDrawing -> openDemo(
-                    DrawingFragment(), DrawingFragment::class.simpleName
+                    DrawingFragment(),
+                    DrawingFragment::class.simpleName
                 )
                 MainViewModel.UiEvent.NavigateToReading -> openDemo(
-                    ReadingFragment(), ReadingFragment::class.simpleName
+                    ReadingFragment(),
+                    ReadingFragment::class.simpleName
                 )
                 MainViewModel.UiEvent.NavigateToSeeing -> openDemo(
-                    SeeingFragment(), SeeingFragment::class.simpleName
+                    SeeingFragment(),
+                    SeeingFragment::class.simpleName
                 )
                 MainViewModel.UiEvent.NavigateToTranslating -> openDemo(
-                    TranslatingFragment(), TranslatingFragment::class.simpleName
+                    TranslatingFragment(),
+                    TranslatingFragment::class.simpleName
                 )
                 else -> {}
             }
@@ -147,7 +155,6 @@ class MainActivity : RobotActivity(), RobotLifecycleCallbacks {
         Timber.d("onRobotFocusGained")
 
         if (qiContext != null) {
-
             // Save QiContext
             viewModel.qiContext = qiContext
 
@@ -232,16 +239,17 @@ class MainActivity : RobotActivity(), RobotLifecycleCallbacks {
             }
 
         // Set bookmark listeners to respond to translation questions asked
-        viewModel.qiChatbot?.bookmarkStatus(viewModel.mainTopic.bookmarks[getString(R.string.askedToTranslateBookmark)])
-            ?.addOnReachedListener {
-                val fragment: TranslatingFragment =
-                    supportFragmentManager.findFragmentByTag(
-                        TranslatingFragment::class.simpleName
-                    ) as TranslatingFragment
-                if (fragment.isVisible) {
-                    fragment.translate()
-                }
+        viewModel.qiChatbot?.bookmarkStatus(
+            viewModel.mainTopic.bookmarks[getString(R.string.askedToTranslateBookmark)]
+        )?.addOnReachedListener {
+            val fragment: TranslatingFragment =
+                supportFragmentManager.findFragmentByTag(
+                    TranslatingFragment::class.simpleName
+                ) as TranslatingFragment
+            if (fragment.isVisible) {
+                fragment.translate()
             }
+        }
 
         viewModel.qiChatbot?.bookmarkStatus(
             viewModel.mainTopic.bookmarks[getString(R.string.pronounceTranslationBookmark)]

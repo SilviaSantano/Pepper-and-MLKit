@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import de.inovex.pepper.intelligence.R
-import de.inovex.pepper.intelligence.databinding.FragmentDrawingBinding
+import de.inovex.pepper.intelligence.mlkit.R
+import de.inovex.pepper.intelligence.mlkit.databinding.FragmentDrawingBinding
 import de.inovex.pepper.intelligence.mlkit.ui.main.MainViewModel
 import de.inovex.pepper.intelligence.mlkit.utils.Language
 import de.inovex.pepper.intelligence.mlkit.utils.Mode
@@ -87,8 +87,9 @@ class DrawingFragment :
     override fun onDrawingContentChanged() {
         if (strokeManager.getContent().isNotEmpty()) {
             translateAndSayResult(strokeManager.getContent()[0].text ?: "")
-        } else
+        } else {
             goToNotRecognizedDrawingBookmark()
+        }
     }
 
     private fun translateAndSayResult(text: String) {
@@ -104,9 +105,9 @@ class DrawingFragment :
     }
 
     private fun goToRecognizedDrawingBookmark(text: String) {
-        if (text == getString(R.string.inovex))
+        if (text == getString(R.string.inovex)) {
             recognizedTextInovex()
-        else {
+        } else {
             mainViewModel.setQiChatVariable(getString(R.string.recognizedDrawing), text)
             mainViewModel.goToQiChatBookmark(getString(R.string.recognizedDrawingBookmark))
         }
@@ -122,9 +123,9 @@ class DrawingFragment :
     }
 
     private fun selectActiveMode(): Mode {
-        return if (!binding.drawingModelSwitch.isChecked)
+        return if (!binding.drawingModelSwitch.isChecked) {
             Mode.DRAWING
-        else when (mainViewModel.language) {
+        } else when (mainViewModel.language) {
             Language.ENGLISH -> Mode.ENGLISH
             Language.SPANISH -> Mode.SPANISH
             else -> Mode.GERMAN
