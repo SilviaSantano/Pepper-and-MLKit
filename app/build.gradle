@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "de.inovex.pepper.intelligence.mlkit"
         minSdkVersion 23
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -43,15 +43,15 @@ android {
     androidResources {
         noCompress 'lite'
     }
-
 }
 
 dependencies {
     // Default imports for Kotlin and Jetpack
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     // Important: this can not be updated to their newest versions because of version conflicts...
     implementation 'androidx.appcompat:appcompat:1.4.2'
@@ -85,7 +85,7 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha28"
 
     // Hilt
-    implementation "com.google.dagger:hilt-android:2.43.2"
+    implementation "com.google.dagger:hilt-android:2.42"
     kapt "com.google.dagger:hilt-compiler:2.43.2"
 
     // Pepper Qi SDK
