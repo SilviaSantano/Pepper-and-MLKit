@@ -20,3 +20,5 @@ In this demo, we want to further enhance Pepper’s abilities by teaching it to 
 
 ## Demo with ML Kit's translation API
 In this demo, you can ask Pepper to translate a word or a sentence between any pair of languages of those available in your robot. Pepper will respond, uttering the translation in the target language by means of the TextToSpeech android library. The translation will be powered by the ML Kit on-device [Translation API](https://developers.google.com/ml-kit/language/translation), which makes use of the same models used by the Google Translate app’s offline mode. 
+
+To know more about this app and see a detailed description of how it was developed and what components it is based on, you can have a look at this blog post series composed of five articles, where I describe the full application: https://www.inovex.de/de/blog/how-to-use-googles-ml-kit-to-enhance-pepper-with-ai-part-1/.
